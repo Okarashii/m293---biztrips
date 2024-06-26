@@ -1,92 +1,34 @@
 {
-	"trips": [
-		{
-			"id": 1,
-			"title": "BT01",
-			"description": "San Francisco World Trade Center on new Server/IOT/Client ",
-			"startTrip": [
-				2021,
-				2,
-				13,
-				0,
-				0
-			],
-			"endTrip": [
-				2021,
-				2,
-				15,
-				16,
-				56
-			],
-			"meetings": [
-				{
-					"id": 1,
-					"title": "One Conference",
-					"description": "Key Note on One Conference"
-				},
-				{
-					"id": 2,
-					"title": "Zero Conference",
-					"description": "Workshop Zero on One Conference"
-				}
-			]
-		},
-		{
-			"id": 2,
-			"title": "BT02",
-			"description": "Santa Clara Halley on new Server/IOT/Client",
-			"startTrip": [
-				2021,
-				6,
-				23,
-				9,
-				0
-			],
-			"endTrip": [
-				2021,
-				6,
-				27,
-				16,
-				56
-			],
-			"meetings": [
-				{
-					"id": 3,
-					"title": "One Conference",
-					"description": "HandsOn on One Conference"
-				},
-				{
-					"id": 4,
-					"title": "One Conference",
-					"description": "Key Note on One Conference"
-				}
-			]
-		},
-		{
-			"id": 3,
-			"title": "BT03",
-			"description": "San Cose City Halley on Docker/IOT/Client",
-			"startTrip": [
-				2021,
-				12,
-				13,
-				9,
-				0
-			],
-			"endTrip": [
-				2021,
-				12,
-				15,
-				16,
-				56
-			],
-			"meetings": [
-				{
-					"id": 5,
-					"title": "One Conference",
-					"description": "Key Note on One Conference"
-				}
-			]
-		}
-	]
+  "airports": [],
+  "flights": [],
+  "hotels": [
+    {
+      "id": 1,
+      "nearAirportID": 2,
+      "name": "Holiday Inn",
+      "address": "Hollywoodstreet 42",
+      "city": "Los Angeles",
+      "contactFirstname": "Sam",
+      "contactLastname": "Learner",
+      "contactEmail": "s.learner@holiday.com"
+    }
+  ],
+  "hotelRooms": [
+    {
+      "id": 1,
+      "roomNr": "69-Ä",
+      "capacity": 2,
+      "pricePerNight": 89.99,
+      "conditions": [
+        "Air Conditioning",
+        "Mini Fridge"
+      ]
+    }
+  ],
+  "meetingRooms": [],
+  "participants": [],
+  "meetings": [],
+  "planeTickets": [],
+  "hotelbooking": [],
+  "bookings": []
 }
