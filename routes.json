@@ -1,14 +1,12 @@
 {
-	"/hotels/:hotelID/hotelRooms": "/hotelRooms",
-	"/hotels/:id/hotelRooms/:id": "/hotelRooms/:id",
-	"/hotels/:hotelID/meetingRooms": "/meetingRooms",
-	"/hotels/:id/meetingRooms/:id": "/meetingRooms/:id",
-	"/bookings/:id/meetings": "/meetings",
-	"/bookings/:id/meetings/:id": "/meetings/:id",
-	"/bookings/:id/participants": "/participants",
-	"/bookings/:id/participants/:id": "/participants/:id",
-	"/bookings/:id/participants/:id/planeTickets": "/planeTickets",
-	"/bookings/:id/participants/:id/planeTickets/:id": "/planeTickets/:id",
-	"/bookings/:id/participants/:id/hotelBookings": "/hotelBookings",
-	"/bookings/:id/participants/:id/hotelBookings/:id": "/hotelBookings/:id"
+	"/hotels/:id/rooms": "/rooms",
+	"/hotels/:id/rooms/:id": "/rooms/:id",
+	"/trips/:id/meetings": "/meetings",
+	"/trips/:id/meetings/:id": "/meetings/:id",
+	"/trips/:id/participants": "/participants",
+	"/trips/:id/participants/:id": "/participants/:id",
+	"/trips/:id/participants/:id/planeTickets": "/planeTickets",
+	"/trips/:id/participants/:id/planeTickets/:id": "/planeTickets/:id",
+	"/trips/:id/participants/:id/hotelBookings": "/hotelBookings",
+	"/trips/:id/participants/:id/hotelBookings/:id": "/hotelBookings/:id"
 }

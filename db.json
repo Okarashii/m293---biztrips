@@ -1,6 +1,212 @@
 {
-  "airports": [],
-  "flights": [],
+  "airports": [
+    {
+      "id": 1,
+      "name": "Zürich Airport",
+      "code": "ZRH",
+      "country": "Switzerland",
+      "city": "Zürich"
+    },
+    {
+      "id": 2,
+      "name": "Heathrow Airport",
+      "code": "LHR",
+      "country": "United Kingdom",
+      "city": "London"
+    },
+    {
+      "id": 3,
+      "name": "Tokyo Haneda Airport",
+      "code": "HND",
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    {
+      "id": 4,
+      "name": "Dubai International Airport",
+      "code": "DXB",
+      "country": "United Arab Emirates",
+      "city": "Dubai"
+    },
+    {
+      "id": 5,
+      "name": "Charles de Gaulle Airport",
+      "code": "CDG",
+      "country": "France",
+      "city": "Paris"
+    },
+    {
+      "id": 6,
+      "name": "Beijing Capital International Airport",
+      "code": "PEK",
+      "country": "China",
+      "city": "Beijing"
+    },
+    {
+      "id": 7,
+      "name": "Los Angeles International Airport",
+      "code": "LAX",
+      "country": "United States",
+      "city": "Los Angeles"
+    },
+    {
+      "id": 8,
+      "name": "Changi Airport",
+      "code": "SIN",
+      "country": "Singapore",
+      "city": "Singapore"
+    },
+    {
+      "id": 9,
+      "name": "Frankfurt Airport",
+      "code": "FRA",
+      "country": "Germany",
+      "city": "Frankfurt"
+    },
+    {
+      "id": 10,
+      "name": "Sydney Kingsford Smith Airport",
+      "code": "SYD",
+      "country": "Australia",
+      "city": "Sydney"
+    },
+    {
+      "name": "Beijing Capital International Airport",
+      "code": "PEK",
+      "country": "China",
+      "city": "Beijing",
+      "id": 11
+    },
+    {
+      "name": "Dubai International Airport",
+      "code": "DXB",
+      "country": "United Arab Emirates",
+      "city": "Dubai",
+      "id": 12
+    }
+  ],
+  "flights": [
+    {
+      "id": 1,
+      "fromAirportID": 1,
+      "toAirportID": 2,
+      "airline": "Swiss",
+      "economyPrice": 742.37,
+      "premiumEconomyPrice": 1959.71,
+      "businessPrice": 4472.77,
+      "firstClassPrice": 6374.87
+    },
+    {
+      "id": 2,
+      "fromAirportID": 5,
+      "toAirportID": 8,
+      "airline": "Air France",
+      "economyPrice": 1420.2,
+      "premiumEconomyPrice": 1198.44,
+      "businessPrice": 2627.04,
+      "firstClassPrice": 14424.54
+    },
+    {
+      "id": 3,
+      "fromAirportID": 9,
+      "toAirportID": 9,
+      "airline": "United Airlines",
+      "economyPrice": 715.76,
+      "premiumEconomyPrice": 1140.42,
+      "businessPrice": 3336.72,
+      "firstClassPrice": 8368.99
+    },
+    {
+      "id": 4,
+      "fromAirportID": 9,
+      "toAirportID": 7,
+      "airline": "Swiss",
+      "economyPrice": 192.37,
+      "premiumEconomyPrice": 1042.67,
+      "businessPrice": 2406.61,
+      "firstClassPrice": 5055.08
+    },
+    {
+      "id": 5,
+      "fromAirportID": 6,
+      "toAirportID": 4,
+      "airline": "Delta Airlines",
+      "economyPrice": 1265.61,
+      "premiumEconomyPrice": 1625.68,
+      "businessPrice": 4300.5,
+      "firstClassPrice": 6217.75
+    },
+    {
+      "id": 6,
+      "fromAirportID": 10,
+      "toAirportID": 5,
+      "airline": "Swiss",
+      "economyPrice": 1478.03,
+      "premiumEconomyPrice": 2419.19,
+      "businessPrice": 578.49,
+      "firstClassPrice": 8697.7
+    },
+    {
+      "id": 7,
+      "fromAirportID": 7,
+      "toAirportID": 9,
+      "airline": "Lufthansa",
+      "economyPrice": 549.82,
+      "premiumEconomyPrice": 1204.27,
+      "businessPrice": 2955.11,
+      "firstClassPrice": 2899.82
+    },
+    {
+      "id": 8,
+      "fromAirportID": 8,
+      "toAirportID": 3,
+      "airline": "Japan Airlines",
+      "economyPrice": 964.65,
+      "premiumEconomyPrice": 822.28,
+      "businessPrice": 871.43,
+      "firstClassPrice": 4400.35
+    },
+    {
+      "id": 9,
+      "fromAirportID": 9,
+      "toAirportID": 8,
+      "airline": "Air France",
+      "economyPrice": 864.04,
+      "premiumEconomyPrice": 751.65,
+      "businessPrice": 2119.69,
+      "firstClassPrice": 7554.54
+    },
+    {
+      "id": 10,
+      "fromAirportID": 6,
+      "toAirportID": 10,
+      "airline": "Delta Airlines",
+      "economyPrice": 879.56,
+      "premiumEconomyPrice": 1767,
+      "businessPrice": 4097.61,
+      "firstClassPrice": 2642.54
+    },
+    {
+      "fromAirportID": "4",
+      "toAirportID": "7",
+      "airline": "Quanta",
+      "economyPrice": "168.18",
+      "premiumEconomyPrice": "279.29",
+      "businessPrice": "174.9",
+      "firstClassPrice": "115.3",
+      "id": 11
+    },
+    {
+      "fromAirportID": "3",
+      "toAirportID": "0",
+      "airline": "Quanta",
+      "economyPrice": "124.82",
+      "premiumEconomyPrice": "155.05",
+      "businessPrice": "539.75",
+      "firstClassPrice": "359.8",
+      "id": 12
+    }
+  ],
   "hotels": [
     {
       "id": 1,
@@ -11,24 +217,1284 @@
       "contactFirstname": "Sam",
       "contactLastname": "Learner",
       "contactEmail": "s.learner@holiday.com"
+    },
+    {
+      "nearAirportID": "<integer>",
+      "name": "<string>",
+      "address": "<string>",
+      "city": "<string>",
+      "contactFirstname": "<string>",
+      "contactLastname": "<string>",
+      "contactEmail": "<string>",
+      "id": 2
     }
   ],
-  "hotelRooms": [
+  "rooms": [
     {
       "id": 1,
-      "roomNr": "69-Ä",
-      "capacity": 2,
-      "pricePerNight": 89.99,
-      "conditions": [
-        "Air Conditioning",
+      "roomNr": "79J",
+      "capacity": 21,
+      "price": 929.39,
+      "utilities": [
         "Mini Fridge"
-      ]
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 2,
+      "roomNr": "52A",
+      "capacity": 34,
+      "price": 964.33,
+      "utilities": [
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 3,
+      "roomNr": "69V",
+      "capacity": 9,
+      "price": 72.34,
+      "utilities": [
+        "Catering",
+        "Paid TV",
+        "Comp. Breakfast",
+        "Beamer"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 4,
+      "roomNr": "24H",
+      "capacity": 13,
+      "price": 705.56,
+      "utilities": [
+        "Mini Fridge",
+        "Paid TV",
+        "Comp. Breakfast",
+        "Beamer"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 5,
+      "roomNr": "71X",
+      "capacity": 41,
+      "price": 858.19,
+      "utilities": [
+        "Air Conditioning",
+        "Beamer"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 6,
+      "roomNr": "70P",
+      "capacity": 11,
+      "price": 933.47,
+      "utilities": [
+        "Comp. Breakfast",
+        "Air Conditioning",
+        "Mini Fridge",
+        "Catering",
+        "Paid TV",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 7,
+      "roomNr": "20F",
+      "capacity": 18,
+      "price": 602.38,
+      "utilities": [
+        "Mini Fridge",
+        "Paid TV"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 8,
+      "roomNr": "55N",
+      "capacity": 32,
+      "price": 753.54,
+      "utilities": [
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 9,
+      "roomNr": "54H",
+      "capacity": 15,
+      "price": 400.66,
+      "utilities": [
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 10,
+      "roomNr": "51G",
+      "capacity": 21,
+      "price": 885.64,
+      "utilities": [
+        "Comp. Breakfast",
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 11,
+      "roomNr": "14B",
+      "capacity": 41,
+      "price": 175.09,
+      "utilities": [
+        "Air Conditioning",
+        "Mini Fridge",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 12,
+      "roomNr": "66Q",
+      "capacity": 14,
+      "price": 883,
+      "utilities": [
+        "Beamer",
+        "Paid TV",
+        "Mini Fridge",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 13,
+      "roomNr": "27O",
+      "capacity": 30,
+      "price": 735.87,
+      "utilities": [
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 14,
+      "roomNr": "56H",
+      "capacity": 25,
+      "price": 715.78,
+      "utilities": [
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 15,
+      "roomNr": "72P",
+      "capacity": 12,
+      "price": 860.68,
+      "utilities": [
+        "Paid TV",
+        "Catering",
+        "Air Conditioning",
+        "Comp. Breakfast",
+        "Beamer",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 16,
+      "roomNr": "83O",
+      "capacity": 38,
+      "price": 753.05,
+      "utilities": [
+        "Paid TV",
+        "Catering",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 17,
+      "roomNr": "75L",
+      "capacity": 35,
+      "price": 474.47,
+      "utilities": [
+        ""
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 18,
+      "roomNr": "48K",
+      "capacity": 15,
+      "price": 243.78,
+      "utilities": [
+        "Paid TV",
+        "Air Conditioning",
+        "Beamer",
+        "Catering",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 19,
+      "roomNr": "82X",
+      "capacity": 45,
+      "price": 714.06,
+      "utilities": [
+        ""
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 20,
+      "roomNr": "32V",
+      "capacity": 26,
+      "price": 447.73,
+      "utilities": [
+        "Comp. Breakfast",
+        "Paid TV",
+        "Mini Fridge",
+        "Air Conditioning",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 21,
+      "roomNr": "86Z",
+      "capacity": 37,
+      "price": 887.37,
+      "utilities": [
+        "Paid TV",
+        "Mini Fridge",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 22,
+      "roomNr": "42B",
+      "capacity": 37,
+      "price": 962.2,
+      "utilities": [
+        "Beamer",
+        "Comp. Breakfast",
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 23,
+      "roomNr": "76O",
+      "capacity": 41,
+      "price": 255.15,
+      "utilities": [
+        "Air Conditioning",
+        "Catering"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 24,
+      "roomNr": "47Z",
+      "capacity": 49,
+      "price": 289.67,
+      "utilities": [
+        "Beamer",
+        "Air Conditioning",
+        "Paid TV",
+        "Mini Fridge",
+        "Catering",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 25,
+      "roomNr": "91E",
+      "capacity": 50,
+      "price": 450.73,
+      "utilities": [
+        ""
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 26,
+      "roomNr": "84K",
+      "capacity": 5,
+      "price": 154.55,
+      "utilities": [
+        "Comp. Breakfast",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 27,
+      "roomNr": "28S",
+      "capacity": 34,
+      "price": 315.66,
+      "utilities": [
+        "Comp. Breakfast",
+        "Beamer",
+        "Catering",
+        "Paid TV"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 28,
+      "roomNr": "84T",
+      "capacity": 6,
+      "price": 308.49,
+      "utilities": [
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 29,
+      "roomNr": "27D",
+      "capacity": 48,
+      "price": 223.64,
+      "utilities": [
+        "Beamer",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 30,
+      "roomNr": "97C",
+      "capacity": 17,
+      "price": 598.87,
+      "utilities": [
+        "Comp. Breakfast",
+        "Mini Fridge",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 31,
+      "roomNr": "47L",
+      "capacity": 16,
+      "price": 741.26,
+      "utilities": [
+        "Comp. Breakfast",
+        "Beamer",
+        "Paid TV",
+        "Air Conditioning",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 32,
+      "roomNr": "22S",
+      "capacity": 13,
+      "price": 604.81,
+      "utilities": [
+        "Mini Fridge",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 33,
+      "roomNr": "73J",
+      "capacity": 45,
+      "price": 373.91,
+      "utilities": [
+        "Paid TV",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 34,
+      "roomNr": "66B",
+      "capacity": 22,
+      "price": 699.1,
+      "utilities": [
+        "Comp. Breakfast",
+        "Paid TV",
+        "Mini Fridge",
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 35,
+      "roomNr": "71F",
+      "capacity": 6,
+      "price": 239.02,
+      "utilities": [
+        "Paid TV",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 36,
+      "roomNr": "42D",
+      "capacity": 34,
+      "price": 241.75,
+      "utilities": [
+        "Catering",
+        "Beamer"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 37,
+      "roomNr": "65O",
+      "capacity": 33,
+      "price": 855.45,
+      "utilities": [
+        "Comp. Breakfast",
+        "Beamer",
+        "Paid TV",
+        "Catering",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 38,
+      "roomNr": "62E",
+      "capacity": 3,
+      "price": 607.4,
+      "utilities": [
+        "Comp. Breakfast",
+        "Beamer",
+        "Mini Fridge",
+        "Paid TV",
+        "Catering"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 39,
+      "roomNr": "94L",
+      "capacity": 8,
+      "price": 206.1,
+      "utilities": [
+        "Mini Fridge",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 40,
+      "roomNr": "90H",
+      "capacity": 17,
+      "price": 472.19,
+      "utilities": [
+        "Catering",
+        "Beamer",
+        "Mini Fridge",
+        "Comp. Breakfast",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 41,
+      "roomNr": "82F",
+      "capacity": 20,
+      "price": 755.05,
+      "utilities": [
+        "Beamer",
+        "Comp. Breakfast",
+        "Mini Fridge",
+        "Paid TV",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 42,
+      "roomNr": "92U",
+      "capacity": 2,
+      "price": 917.7,
+      "utilities": [
+        "Paid TV",
+        "Comp. Breakfast",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 43,
+      "roomNr": "42R",
+      "capacity": 20,
+      "price": 376.34,
+      "utilities": [
+        "Air Conditioning",
+        "Mini Fridge",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 44,
+      "roomNr": "81Q",
+      "capacity": 41,
+      "price": 999.63,
+      "utilities": [
+        "Beamer",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 45,
+      "roomNr": "25B",
+      "capacity": 24,
+      "price": 557.01,
+      "utilities": [
+        "Catering",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 46,
+      "roomNr": "31Q",
+      "capacity": 21,
+      "price": 303.9,
+      "utilities": [
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 47,
+      "roomNr": "54B",
+      "capacity": 34,
+      "price": 327.37,
+      "utilities": [
+        "Air Conditioning",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 48,
+      "roomNr": "60P",
+      "capacity": 27,
+      "price": 289.02,
+      "utilities": [
+        "Beamer",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 49,
+      "roomNr": "99I",
+      "capacity": 13,
+      "price": 666.48,
+      "utilities": [
+        "Catering",
+        "Air Conditioning",
+        "Comp. Breakfast",
+        "Beamer",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 50,
+      "roomNr": "46T",
+      "capacity": 30,
+      "price": 330.38,
+      "utilities": [
+        "Paid TV",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 51,
+      "roomNr": "75I",
+      "capacity": 23,
+      "price": 881.67,
+      "utilities": [
+        "Mini Fridge",
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 52,
+      "roomNr": "95N",
+      "capacity": 41,
+      "price": 782.4,
+      "utilities": [
+        ""
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 53,
+      "roomNr": "58W",
+      "capacity": 29,
+      "price": 992.05,
+      "utilities": [
+        "Paid TV",
+        "Mini Fridge",
+        "Air Conditioning",
+        "Comp. Breakfast",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 54,
+      "roomNr": "58M",
+      "capacity": 20,
+      "price": 537.11,
+      "utilities": [
+        "Air Conditioning",
+        "Mini Fridge",
+        "Paid TV",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 55,
+      "roomNr": "82B",
+      "capacity": 45,
+      "price": 458.41,
+      "utilities": [
+        ""
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 56,
+      "roomNr": "37P",
+      "capacity": 41,
+      "price": 845.9,
+      "utilities": [
+        "Mini Fridge",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 57,
+      "roomNr": "70Q",
+      "capacity": 6,
+      "price": 889.19,
+      "utilities": [
+        "Paid TV",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 58,
+      "roomNr": "17D",
+      "capacity": 22,
+      "price": 755.21,
+      "utilities": [
+        "Air Conditioning",
+        "Paid TV",
+        "Beamer",
+        "Mini Fridge",
+        "Catering",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 59,
+      "roomNr": "27L",
+      "capacity": 15,
+      "price": 841.92,
+      "utilities": [
+        "Air Conditioning",
+        "Catering",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 60,
+      "roomNr": "46A",
+      "capacity": 27,
+      "price": 851.23,
+      "utilities": [
+        "Catering",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 61,
+      "roomNr": "42K",
+      "capacity": 45,
+      "price": 345.98,
+      "utilities": [
+        "Catering",
+        "Paid TV",
+        "Beamer",
+        "Mini Fridge",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 62,
+      "roomNr": "79V",
+      "capacity": 49,
+      "price": 512.17,
+      "utilities": [
+        "Air Conditioning",
+        "Catering",
+        "Beamer",
+        "Comp. Breakfast",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 63,
+      "roomNr": "85J",
+      "capacity": 43,
+      "price": 428.38,
+      "utilities": [
+        "Mini Fridge",
+        "Catering",
+        "Beamer"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 64,
+      "roomNr": "12H",
+      "capacity": 22,
+      "price": 255.18,
+      "utilities": [
+        "Beamer"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 65,
+      "roomNr": "95X",
+      "capacity": 11,
+      "price": 520.82,
+      "utilities": [
+        "Mini Fridge",
+        "Catering",
+        "Paid TV",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 66,
+      "roomNr": "88F",
+      "capacity": 1,
+      "price": 771.53,
+      "utilities": [
+        "Beamer",
+        "Mini Fridge",
+        "Air Conditioning",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 67,
+      "roomNr": "65I",
+      "capacity": 42,
+      "price": 395.37,
+      "utilities": [
+        "Catering",
+        "Mini Fridge",
+        "Comp. Breakfast",
+        "Air Conditioning",
+        "Paid TV",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 68,
+      "roomNr": "94Z",
+      "capacity": 24,
+      "price": 786.47,
+      "utilities": [
+        "Beamer",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 69,
+      "roomNr": "58R",
+      "capacity": 1,
+      "price": 175.36,
+      "utilities": [
+        "Air Conditioning",
+        "Catering",
+        "Comp. Breakfast",
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 70,
+      "roomNr": "75R",
+      "capacity": 50,
+      "price": 552.25,
+      "utilities": [
+        "Comp. Breakfast",
+        "Paid TV",
+        "Mini Fridge",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 71,
+      "roomNr": "90T",
+      "capacity": 43,
+      "price": 999.16,
+      "utilities": [
+        "Beamer",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 72,
+      "roomNr": "47T",
+      "capacity": 37,
+      "price": 748.31,
+      "utilities": [
+        "Catering",
+        "Paid TV",
+        "Air Conditioning",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 73,
+      "roomNr": "46J",
+      "capacity": 9,
+      "price": 65.67,
+      "utilities": [
+        "Paid TV",
+        "Comp. Breakfast",
+        "Beamer",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 74,
+      "roomNr": "80Z",
+      "capacity": 36,
+      "price": 192.86,
+      "utilities": [
+        "Beamer",
+        "Comp. Breakfast",
+        "Air Conditioning",
+        "Paid TV",
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 75,
+      "roomNr": "38W",
+      "capacity": 10,
+      "price": 149.04,
+      "utilities": [
+        "Air Conditioning",
+        "Comp. Breakfast",
+        "Beamer",
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 76,
+      "roomNr": "27E",
+      "capacity": 1,
+      "price": 665.81,
+      "utilities": [
+        "Paid TV",
+        "Beamer",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 77,
+      "roomNr": "38C",
+      "capacity": 42,
+      "price": 269.23,
+      "utilities": [
+        "Mini Fridge"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 78,
+      "roomNr": "60B",
+      "capacity": 20,
+      "price": 527.76,
+      "utilities": [
+        "Mini Fridge",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 79,
+      "roomNr": "85Z",
+      "capacity": 37,
+      "price": 795.73,
+      "utilities": [
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 80,
+      "roomNr": "33K",
+      "capacity": 11,
+      "price": 380.64,
+      "utilities": [
+        "Comp. Breakfast",
+        "Mini Fridge",
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 81,
+      "roomNr": "63Y",
+      "capacity": 34,
+      "price": 332.6,
+      "utilities": [
+        "Comp. Breakfast",
+        "Beamer",
+        "Air Conditioning",
+        "Catering",
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 82,
+      "roomNr": "13R",
+      "capacity": 42,
+      "price": 916.7,
+      "utilities": [
+        "Air Conditioning",
+        "Beamer",
+        "Paid TV",
+        "Catering",
+        "Mini Fridge",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 83,
+      "roomNr": "78H",
+      "capacity": 39,
+      "price": 165.24,
+      "utilities": [
+        "Paid TV",
+        "Mini Fridge",
+        "Air Conditioning",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 84,
+      "roomNr": "64F",
+      "capacity": 20,
+      "price": 623.7,
+      "utilities": [
+        "Paid TV",
+        "Beamer",
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 85,
+      "roomNr": "22T",
+      "capacity": 5,
+      "price": 864.29,
+      "utilities": [
+        "Comp. Breakfast",
+        "Mini Fridge",
+        "Air Conditioning",
+        "Beamer",
+        "Catering",
+        "Paid TV"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 86,
+      "roomNr": "67X",
+      "capacity": 18,
+      "price": 879.06,
+      "utilities": [
+        "Mini Fridge",
+        "Comp. Breakfast",
+        "Paid TV",
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 87,
+      "roomNr": "58C",
+      "capacity": 9,
+      "price": 957.93,
+      "utilities": [
+        "Air Conditioning",
+        "Comp. Breakfast",
+        "Beamer",
+        "Paid TV",
+        "Mini Fridge",
+        "Catering"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 88,
+      "roomNr": "54D",
+      "capacity": 23,
+      "price": 579.03,
+      "utilities": [
+        "Catering",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 89,
+      "roomNr": "15P",
+      "capacity": 43,
+      "price": 803.01,
+      "utilities": [
+        "Catering",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 90,
+      "roomNr": "87K",
+      "capacity": 41,
+      "price": 136.25,
+      "utilities": [
+        "Paid TV",
+        "Catering",
+        "Air Conditioning",
+        "Mini Fridge",
+        "Comp. Breakfast",
+        "Beamer"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 91,
+      "roomNr": "20W",
+      "capacity": 32,
+      "price": 60.22,
+      "utilities": [
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 92,
+      "roomNr": "42K",
+      "capacity": 30,
+      "price": 908.36,
+      "utilities": [
+        "Mini Fridge",
+        "Air Conditioning",
+        "Paid TV",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 93,
+      "roomNr": "62R",
+      "capacity": 24,
+      "price": 505.84,
+      "utilities": [
+        "Mini Fridge",
+        "Catering",
+        "Beamer",
+        "Comp. Breakfast"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 94,
+      "roomNr": "23F",
+      "capacity": 48,
+      "price": 201.64,
+      "utilities": [
+        "Beamer",
+        "Catering"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 95,
+      "roomNr": "44M",
+      "capacity": 39,
+      "price": 981.31,
+      "utilities": [
+        "Mini Fridge",
+        "Paid TV"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "id": 96,
+      "roomNr": "81R",
+      "capacity": 3,
+      "price": 573.77,
+      "utilities": [
+        "Beamer",
+        "Comp. Breakfast",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 97,
+      "roomNr": "77Y",
+      "capacity": 44,
+      "price": 222.99,
+      "utilities": [
+        "Beamer",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 98,
+      "roomNr": "28D",
+      "capacity": 17,
+      "price": 202,
+      "utilities": [
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 99,
+      "roomNr": "54F",
+      "capacity": 31,
+      "price": 119.71,
+      "utilities": [
+        "Catering",
+        "Mini Fridge",
+        "Comp. Breakfast",
+        "Beamer",
+        "Paid TV"
+      ],
+      "isMeetingRoom": true
+    },
+    {
+      "id": 100,
+      "roomNr": "73F",
+      "capacity": 3,
+      "price": 892.96,
+      "utilities": [
+        "Catering",
+        "Beamer",
+        "Mini Fridge",
+        "Comp. Breakfast",
+        "Air Conditioning"
+      ],
+      "isMeetingRoom": false
+    },
+    {
+      "roomNr": "<string>",
+      "capacity": "<integer>",
+      "price": "<number>",
+      "utilities": [
+        "<string>",
+        "<string>"
+      ],
+      "isMeetingRoom": "<boolean>",
+      "id": 101
     }
   ],
-  "meetingRooms": [],
-  "participants": [],
-  "meetings": [],
-  "planeTickets": [],
+  "participants": [
+    {
+      "firstname": "<string>",
+      "lastname": "<string>",
+      "address": "<string>",
+      "city": "<string>",
+      "email": "<string>",
+      "id": 1
+    }
+  ],
+  "meetings": [
+    {
+      "hotelID": "<integer>",
+      "meetingRoomID": {
+        "value": "reference #/components/schemas/MeetingRoomID not found in the OpenAPI spec"
+      },
+      "startDateTime": "<dateTime>",
+      "endDateTime": "<dateTime>",
+      "id": 1
+    }
+  ],
+  "planeTickets": [
+    {
+      "flightID": "<integer>",
+      "departureDateTime": "<dateTime>",
+      "arrivalDateTime": "<dateTime>",
+      "class": "first",
+      "price": "<number>",
+      "id": 1
+    }
+  ],
   "hotelbooking": [],
-  "bookings": []
+  "trips": [
+    {
+      "startDate": "<date>",
+      "endDate": "<date>",
+      "id": 1
+    }
+  ]
 }
