@@ -1,6 +1,6 @@
 import AirportForm from "../components/airportForm";
 
-export default function Airport() {
+export default function Airports() {
 	return (
 		<AirportForm/>
 	);
