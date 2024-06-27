@@ -9,3 +9,9 @@ export async function postAirport(airport) {
 
 	return response
 }
+
+export async function getAirports() {
+	const response = await fetch(baseUrl + "airports");
+	if (response.ok) {return response.json();}
+	throw response;
+}

@@ -21,7 +21,7 @@ export default function AirportForm() {
 	}
 
 	return (
-		<form onSubmit={handleSubmit } className="grid grid-cols-2 w-fit gap-y-2 bg-slate-600 rounded-xl p-4">
+		<form onSubmit={handleSubmit }>
 			<label htmlFor="name">Name</label>
 			<input className="border border-black" name="name" id="name" value={name} required onChange={e => setName(e.currentTarget.value)}/>
 			<label htmlFor="code">Code</label>
