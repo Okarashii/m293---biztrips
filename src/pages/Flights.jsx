@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import { getFlights } from "../services/flightServices";
 import { getAirports } from '../services/airportServices';
 
 export default function Flights() {
@@ -30,13 +29,13 @@ export default function Flights() {
 			<h5 className="col-span-2 justify-self-start text-xl">Preise</h5>
 
 			<label htmlFor="economy">Economy</label>
-			<input type="number" name="economy"/>
+			<input type="number" step="0.01" name="economy"/>
 			<label htmlFor="premiumEconomy">Premium Economy</label>
-			<input type="number" name="premiumEconomy"/>
+			<input type="number" step="0.01" name="premiumEconomy"/>
 			<label htmlFor="business">Business</label>
-			<input type="number" name="business"/>
+			<input type="number" step="0.01" name="business"/>
 			<label htmlFor="first">First Class</label>
-			<input type="number" name="first"/>
+			<input type="number" step="0.01" name="first"/>
 
 			<button type="submit">Hinzufügen</button>
 		</form>

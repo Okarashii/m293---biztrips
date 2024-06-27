@@ -2,11 +2,11 @@
 
 export default function Home() {
 	return (
-		<>
-			<a className="bg-slate-600 px-4 py-2 rounded-lg" href='/airport'>Flughafen hinzufügen</a>
-			{/* <Link to='/flight'>Flug hinzufügen</Link>
-			<Link to='/hotel'>Hotel hinzufügen</Link>
-			<Link to='/trip'>Trip buchen</Link> */}
-		</>
+		<div className="flex flex-col gap-2">
+			<a className="bg-slate-600 px-4 py-2 rounded-lg w-fit" href='/airports'>Flughafen hinzufügen</a>
+			<a className="bg-slate-600 px-4 py-2 rounded-lg w-fit" href='/flights'>Flug Hinzufügen</a>
+			<a className="bg-slate-600 px-4 py-2 rounded-lg w-fit" href='/hotels'>Hotel hinzufügen</a>
+			<a className="bg-slate-600 px-4 py-2 rounded-lg w-fit" href='/trips'>Trip Buchen</a>
+		</div>
 	);
 }
