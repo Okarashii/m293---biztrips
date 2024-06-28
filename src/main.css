@@ -461,17 +461,18 @@ form {
 
 button {
   grid-column: span 2 / span 2;
+  justify-self: end;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  justify-self: end;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 *, ::before, ::after {
