@@ -1,4 +1,6 @@
 {
+	"/hotels": "/hotels",
+	"/hotels/:id": "/hotels/:id",
 	"/hotels/:id/rooms": "/rooms",
 	"/hotels/:id/rooms/:id": "/rooms/:id",
 	"/trips/:id/meetings": "/meetings",

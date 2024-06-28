@@ -12,6 +12,8 @@ import Meetings from './pages/Meetings';
 import Participants from './pages/Participants';
 import PlaneTickets from './pages/PlaneTickets';
 import HotelBookings from './pages/HotelBookings';
+import { getHotel } from './services/hotelServices';
+import { getAirport } from './services/airportServices';
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +31,15 @@ const router = createBrowserRouter([
 	{
 		path: "/hotels",
 		element: <Hotels/>
+	},
+	{
+		path: "/hotels/:hotelID",
+		element: <Hotels/>,
+		loader: async ({params}) => {
+			const hotel = await getHotel(params.hotelID);
+			const airport = await getAirport(hotel.nearAirportID);
+			return {hotel, airport};
+		}
 	},
 	{
 		path: "/hotels/:hotelID/rooms",
