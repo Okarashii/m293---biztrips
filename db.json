@@ -219,27 +219,14 @@
       "contactEmail": "s.learner@holiday.com"
     },
     {
-      "nearAirportID": "<integer>",
-      "name": "<string>",
-      "address": "<string>",
-      "city": "<string>",
-      "contactFirstname": "<string>",
-      "contactLastname": "<string>",
-      "contactEmail": "<string>",
+      "name": "nam",
+      "address": "add",
+      "city": "cit",
+      "contactFirstname": "fir",
+      "contactLastname": "las",
+      "contactEmail": "ema",
+      "nearAirportID": "1",
       "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "name": "Zürich Airport",
-      "address": "Waystreet 55",
-      "city": "Tampa",
-      "contactFirstname": "Ronald",
-      "contactLastname": "smith",
-      "contactEmail": "r.mcDonald@hilton.com",
-      "nearAirportID": "6",
-      "id": 4
     }
   ],
   "rooms": [
