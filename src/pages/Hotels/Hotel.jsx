@@ -131,7 +131,7 @@ function RoomTable({heading, rooms}) {
 
 			<input type="hidden" name="roomIDs" value={selectedRoomIDs}/>
 
-			<button type="submit" formMethod="delete" disabled={selectedRoomIDs.length === 0}>Auswahl Entfernen</button>
+			<button className="disabled:text-gray-500" type="submit" formMethod="delete" disabled={selectedRoomIDs.length === 0}>Auswahl Entfernen</button>
 		</Form>
 	)
 }

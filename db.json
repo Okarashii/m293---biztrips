@@ -291,18 +291,6 @@
       "isMeetingRoom": true
     },
     {
-      "id": 5,
-      "hotelID": 3,
-      "roomNr": "71X",
-      "capacity": 41,
-      "price": 858.19,
-      "utilities": [
-        "Air Conditioning",
-        "Beamer"
-      ],
-      "isMeetingRoom": true
-    },
-    {
       "id": 6,
       "hotelID": 3,
       "roomNr": "70P",
