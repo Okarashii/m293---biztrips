@@ -1,71 +1,32 @@
 import './main.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import Airports from "./pages/Airports";
-import Flights from './pages/Flights';
-import Hotels from './pages/Hotels';
-import Rooms from './pages/Rooms';
-import Trips from './pages/Trips';
-import Meetings from './pages/Meetings';
-import Participants from './pages/Participants';
-import PlaneTickets from './pages/PlaneTickets';
-import HotelBookings from './pages/HotelBookings';
-import { getHotel } from './services/hotelServices';
-import { getAirport } from './services/airportServices';
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import AddAirport, { addAirportLoader } from "./pages/AddAirport/AddAirport";
+import AddFlight, { addFlightLoader } from './pages/AddFlight/AddFlight';
+import AddHotel, { addHotelLoader } from './pages/AddHotel/AddHotel';
+import Hotel, { hotelLoader } from './pages/Hotels/Hotel';
+import Trips from './pages/AddTrip/Trips';
+import Layout from './pages/Layout';
+import Hotels from './pages/Hotels/Hotels';
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Home/>
-	},
-	{
-		path: "/airports",
-		element: <Airports/>
-	},
-	{
-		path: "/flights",
-		element: <Flights/>
-	},
-	{
-		path: "/hotels",
-		element: <Hotels/>
-	},
-	{
-		path: "/hotels/:hotelID",
-		element: <Hotels/>,
-		loader: async ({params}) => {
-			const hotel = await getHotel(params.hotelID);
-			const airport = await getAirport(hotel.nearAirportID);
-			return {hotel, airport};
-		}
-	},
-	{
-		path: "/hotels/:hotelID/rooms",
-		element: <Rooms/>
-	},
-	{
-		path: "/trips",
-		element: <Trips/>
-	},
-	{
-		path: "/trips/:tripID/meetings",
-		element: <Meetings/>
-	},
-	{
-		path: "/trips/:tripID/participants",
-		element: <Participants/>
-	},
-	{
-		path: "/trips/:tripID/participants/:participantID/planetickets",
-		element: <PlaneTickets/>
-	},
-	{
-		path: "/trips/:tripID/participants/:participantID/hotelbooking",
-		element: <HotelBookings/>
-	}
-]);
+const router = createBrowserRouter(
+	createRoutesFromElements(
+		<Route element={<Layout/>}>
+			<Route index path="/" element={<Home/>}/>
+			<Route path="/addairport" element={<AddAirport/>} loader={addAirportLoader}/>
+			<Route path="/addflight" element={<AddFlight/>} loader={addFlightLoader}/>
+			<Route path="/addhotel" element={<AddHotel/>} loader={addHotelLoader}/>
+			<Route path="/hotels" element={<Hotels/>}/>
+			<Route path="/hotels/:hotelID" element={<Hotel/>} loader={hotelLoader}/>
+
+			<Route path="/bookTrip" element={<Trips/>}>
+				
+			</Route>
+		</Route>
+	)
+)
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>

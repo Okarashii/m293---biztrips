@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { createAirport } from "../services/airportServices";
+import { createAirport } from "../../services/airportServices";
+
+export const addAirportLoader = ({params}) => {
+	return {};
+}
 
 export default function Airports() {
 	const [name, setName] = useState("");

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getAirports } from "../services/airportServices";
-import { createHotel } from "../services/hotelServices";
+import { getAirports } from "../../services/airportServices";
+import { createHotel } from "../../services/hotelServices";
 import { Navigate, useParams, useLoaderData } from "react-router-dom";
 
-function HotelForm() {
+export default function AddHotel() {
 	const [airportList, setAirportList] = useState([]);
 
 	const [name, setName] = useState(undefined);
@@ -74,30 +74,6 @@ function HotelForm() {
 	)
 }
 
-export default function Hotels() {
-	const {hotel, airport} = useLoaderData();
-
-	if (hotel) {
-		return (
-			<div className="grid grid-cols-2 w-fit bg-slate-700 p-4 rounded-lg">
-				<p>Name</p>
-				<p>{hotel.name}</p>
-				<p>Addresse</p>
-				<p>{hotel.address}</p>
-				<p>Stadt</p>
-				<p>{hotel.city}</p>
-				<p>Vorname</p>
-				<p>{hotel.contactFirstname}</p>
-				<p>Nachname</p>
-				<p>{hotel.contactLastname}</p>
-				<p>Email</p>
-				<p>{hotel.contactEmail}</p>
-				<p>Nahegelegener Flughafen</p>
-				<p>{airport.name}</p>
-			</div>
-		)
-	}
-	else {
-		return (<HotelForm/>)
-	}
+export const addHotelLoader = async () => {
+	return await getAirports();
 }
