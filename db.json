@@ -291,15 +291,6 @@
       "isMeetingRoom": true
     },
     {
-      "id": 6,
-      "hotelID": 3,
-      "roomNr": "70PKMN",
-      "capacity": 11,
-      "price": 933.47,
-      "utilities": "Comp. Breakfast,Air Conditioning,Mini Fridge,Catering,Paid TV,Beamer",
-      "isMeetingRoom": null
-    },
-    {
       "id": 7,
       "hotelID": 3,
       "roomNr": "20F",
@@ -1620,6 +1611,33 @@
       "price": "5",
       "utilities": "asdasd",
       "id": 109
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "test",
+      "isMeetingRoom": null,
+      "capacity": 123,
+      "price": 321,
+      "utilities": "tset",
+      "id": 110
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "70PK",
+      "isMeetingRoom": null,
+      "capacity": 11,
+      "price": 933.47,
+      "utilities": "Comp. Breakfast,Air Conditioning,Mini Fridge,Catering,Paid TV,Beamer",
+      "id": 111
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "new-5",
+      "isMeetingRoom": null,
+      "capacity": 1,
+      "price": 5,
+      "utilities": "room",
+      "id": 112
     }
   ],
   "participants": [
