@@ -293,18 +293,11 @@
     {
       "id": 6,
       "hotelID": 3,
-      "roomNr": "70P",
+      "roomNr": "70PKMN",
       "capacity": 11,
       "price": 933.47,
-      "utilities": [
-        "Comp. Breakfast",
-        "Air Conditioning",
-        "Mini Fridge",
-        "Catering",
-        "Paid TV",
-        "Beamer"
-      ],
-      "isMeetingRoom": false
+      "utilities": "Comp. Breakfast,Air Conditioning,Mini Fridge,Catering,Paid TV,Beamer",
+      "isMeetingRoom": null
     },
     {
       "id": 7,
@@ -1555,6 +1548,78 @@
       ],
       "isMeetingRoom": "<boolean>",
       "id": 101
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "a222",
+      "isMeetingRoom": "on",
+      "capacity": "555",
+      "price": "1999",
+      "utilities": "big hall",
+      "id": 102
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "dad",
+      "isMeetingRoom": null,
+      "capacity": "5",
+      "price": "25",
+      "utilities": "big room",
+      "id": 103
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "a88",
+      "isMeetingRoom": null,
+      "capacity": "88",
+      "price": "88",
+      "utilities": "asdasd",
+      "id": 104
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "a88 bbas",
+      "isMeetingRoom": null,
+      "capacity": "88",
+      "price": "88",
+      "utilities": "babaduk",
+      "id": 105
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "t22",
+      "isMeetingRoom": null,
+      "capacity": "858",
+      "price": "9879",
+      "utilities": "hahaha",
+      "id": 106
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "t100",
+      "isMeetingRoom": null,
+      "capacity": "1",
+      "price": "67",
+      "utilities": "will be back",
+      "id": 107
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "70P2",
+      "isMeetingRoom": null,
+      "capacity": "11",
+      "price": "933.47",
+      "utilities": "Comp. Breakfast,Air Conditioning,Mini Fridge,Catering,Paid TV,Beamer",
+      "id": 108
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "haha",
+      "isMeetingRoom": null,
+      "capacity": "2",
+      "price": "5",
+      "utilities": "asdasd",
+      "id": 109
     }
   ],
   "participants": [

@@ -53,3 +53,15 @@ export async function deleteRoom(roomID, hotelID) {
 
 	return response;
 }
+
+export async function updateRoom(room) {
+	const response = await fetch(baseUrl + "hotels/" + room.hotelID + "/rooms/" + room.id, {
+		headers: {
+			"Content-Type": "application/json",
+		},
+		method: "PATCH",
+		body: JSON.stringify(room)
+	});
+
+	return response;
+}
