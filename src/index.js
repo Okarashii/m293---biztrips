@@ -15,12 +15,11 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route element={<Layout/>}>
 			<Route index path="/" element={<Home/>}/>
-			<Route path="/addairport" element={<AddAirport/>} loader={addAirportLoader}/>
-			<Route path="/addflight" element={<AddFlight/>} loader={addFlightLoader}/>
-			<Route path="/addhotel" element={<AddHotel/>} loader={addHotelLoader}/>
+			<Route path="/airports/new" element={<AddAirport/>} loader={addAirportLoader}/>
+			<Route path="/flights/new" element={<AddFlight/>} loader={addFlightLoader}/>
 			<Route path="/hotels" element={<Hotels/>}/>
 			<Route path="/hotels/:hotelID" element={<Hotel/>} loader={hotelLoader}/>
-
+			<Route path="/hotels/new" element={<AddHotel/>} loader={addHotelLoader}/>
 			<Route path="/bookTrip" element={<Trips/>}>
 				
 			</Route>
