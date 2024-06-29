@@ -55,10 +55,13 @@
 	th, td {
 		@apply pr-4;
 	}
+
+	dialog[open]::backdrop {
+		background-color: rgb(0 0 0 / 25%);
+	}
 }
 
 @layer components {
-
 	.surface {
 		@apply bg-slate-700 p-4 rounded-lg;
 	}

@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Form, useLocation } from "react-router-dom";
 
 export default function FormModal(method="post", action) {
 	const [isOpen, setOpen] = useState(false);
+	const dialogRef = useRef(null);
+	useEffect(() => {
+		if (isOpen) {
+			dialogRef.current.showModal();
+		}
+		else {
+			dialogRef.current.close();
+		}
+	}, [isOpen])
+
 	const location = useLocation();
 	action = action ?? location.pathname;
 
@@ -14,7 +24,7 @@ export default function FormModal(method="post", action) {
 	return [
 		function({className, children}) {
 			return (
-				<dialog open={isOpen}>
+				<dialog ref={dialogRef} className="bg-transparent">
 					<Form className={className} action={action} method={method} navigate={false} onReset={() => setOpen(false)} onSubmit={handleSubmit}>
 						{children}
 					</Form>

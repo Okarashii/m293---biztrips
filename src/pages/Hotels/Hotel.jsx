@@ -1,4 +1,5 @@
-import { useLoaderData, Form, useParams } from "react-router-dom";
+import { useLoaderData, Await, defer } from "react-router-dom";
+import { Suspense } from "react";
 import { getHotel, getRooms, addRoom, deleteRoom, updateRoom } from '../../services/hotelServices';
 import { getAirport } from '../../services/airportServices';
 import { useState } from "react";
@@ -8,16 +9,13 @@ export const hotelLoader = async ({params}) => {
 	console.log(params.hotelID);
 	const hotel = await getHotel(params.hotelID);
 	const airport = await getAirport(hotel.nearAirportID);
-	const allRooms = await getRooms(hotel.id);
-	const meetingRooms = allRooms.filter(r => r.isMeetingRoom);
-	const rooms = allRooms.filter(r => !r.isMeetingRoom);
+	const rooms = getRooms(hotel.id);
 
-	return {
+	return defer({
 		hotel,
 		airport,
-		rooms,
-		meetingRooms
-	}
+		rooms
+	});
 }
 
 export const hotelAction = async ({params, request}) => {
@@ -61,7 +59,7 @@ export const hotelAction = async ({params, request}) => {
 }
 
 export default function Hotel() {
-	const {hotel, airport, meetingRooms, rooms} = useLoaderData();
+	const {hotel, airport, rooms} = useLoaderData();
 	const [NewRoomModal, setNewModalOpen] = FormModal("put");
 
 	return (
@@ -71,8 +69,20 @@ export default function Hotel() {
 					<HotelData hotel={hotel} airport={airport}/>
 					<button className="h-fit" onClick={() => setNewModalOpen(true)}>Neuer Raum Hinzufügen</button>
 				</span>
-				<RoomTable rooms={rooms} heading="Zimmer"/>
-				<RoomTable rooms={meetingRooms} heading="Meetingräume"/>
+				<Suspense fallback={<RoomTableLoading/>}>
+					<Await resolve={rooms}>
+						{
+							(rooms) => {
+								return (
+									<>
+										<RoomTable rooms={rooms.filter(r => !r.isMeetingRoom)} heading="Zimmer"/>
+										<RoomTable rooms={rooms.filter(r => r.isMeetingRoom)} heading="Meetingräume"/>
+									</>
+								)
+							}
+						}
+					</Await>
+				</Suspense>
 			</div>
 
 			<NewRoomModal className="surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
@@ -184,9 +194,9 @@ function RoomTable({heading, rooms}) {
 				</span>
 			</EditRoomModal>
 
-			<DeleteRoomModal>
+			<DeleteRoomModal className="surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
 				<h6>Soll Raum {selectedRoom.roomNr} wirklich gelöscht werden?</h6>
-				<input name="id" value={selectedRoom.id}/>
+				<input type="hidden" name="id" value={selectedRoom.id}/>
 				<span className="flex justify-end gap-4 w-full col-span-full mt-4">
 					<button type="reset">Nein</button>
 					<button type="submit">Ja</button>
@@ -194,4 +204,26 @@ function RoomTable({heading, rooms}) {
 			</DeleteRoomModal>
 		</>
 	)
+}
+
+function RoomTableLoading() {
+	return (
+		<div className="surface">
+			<h5>Laden...</h5>
+			<table>
+				<thead>
+					<tr className="text-left">
+						<th>Nr</th>
+						<th>Platz</th>
+						<th>Preis</th>
+						<th>Details</th>
+						<th>Edit</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+	);
 }

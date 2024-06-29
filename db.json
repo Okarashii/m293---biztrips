@@ -291,18 +291,6 @@
       "isMeetingRoom": true
     },
     {
-      "id": 7,
-      "hotelID": 3,
-      "roomNr": "20F",
-      "capacity": 18,
-      "price": 602.38,
-      "utilities": [
-        "Mini Fridge",
-        "Paid TV"
-      ],
-      "isMeetingRoom": false
-    },
-    {
       "id": 8,
       "hotelID": 1,
       "roomNr": "55N",
@@ -1548,33 +1536,6 @@
       "price": "1999",
       "utilities": "big hall",
       "id": 102
-    },
-    {
-      "hotelID": 3,
-      "roomNr": "dad",
-      "isMeetingRoom": null,
-      "capacity": "5",
-      "price": "25",
-      "utilities": "big room",
-      "id": 103
-    },
-    {
-      "hotelID": 3,
-      "roomNr": "a88",
-      "isMeetingRoom": null,
-      "capacity": "88",
-      "price": "88",
-      "utilities": "asdasd",
-      "id": 104
-    },
-    {
-      "hotelID": 3,
-      "roomNr": "a88 bbas",
-      "isMeetingRoom": null,
-      "capacity": "88",
-      "price": "88",
-      "utilities": "babaduk",
-      "id": 105
     },
     {
       "hotelID": 3,
