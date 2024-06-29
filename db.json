@@ -227,6 +227,16 @@
       "contactEmail": "ema",
       "nearAirportID": "1",
       "id": 2
+    },
+    {
+      "name": "Hilton",
+      "address": "Hotelway 99",
+      "city": "New York",
+      "contactFirstname": "Henry",
+      "contactLastname": "Smith",
+      "contactEmail": "hsmith@hilton.com",
+      "nearAirportID": "3",
+      "id": 3
     }
   ],
   "rooms": [
