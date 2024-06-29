@@ -242,6 +242,7 @@
   "rooms": [
     {
       "id": 1,
+      "hotelID": 1,
       "roomNr": "79J",
       "capacity": 21,
       "price": 929.39,
@@ -252,6 +253,7 @@
     },
     {
       "id": 2,
+      "hotelID": 1,
       "roomNr": "52A",
       "capacity": 34,
       "price": 964.33,
@@ -262,6 +264,7 @@
     },
     {
       "id": 3,
+      "hotelID": 1,
       "roomNr": "69V",
       "capacity": 9,
       "price": 72.34,
@@ -275,6 +278,7 @@
     },
     {
       "id": 4,
+      "hotelID": 3,
       "roomNr": "24H",
       "capacity": 13,
       "price": 705.56,
@@ -288,6 +292,7 @@
     },
     {
       "id": 5,
+      "hotelID": 3,
       "roomNr": "71X",
       "capacity": 41,
       "price": 858.19,
@@ -299,6 +304,7 @@
     },
     {
       "id": 6,
+      "hotelID": 3,
       "roomNr": "70P",
       "capacity": 11,
       "price": 933.47,
@@ -314,6 +320,7 @@
     },
     {
       "id": 7,
+      "hotelID": 3,
       "roomNr": "20F",
       "capacity": 18,
       "price": 602.38,
@@ -325,6 +332,7 @@
     },
     {
       "id": 8,
+      "hotelID": 1,
       "roomNr": "55N",
       "capacity": 32,
       "price": 753.54,
@@ -335,6 +343,7 @@
     },
     {
       "id": 9,
+      "hotelID": 1,
       "roomNr": "54H",
       "capacity": 15,
       "price": 400.66,
@@ -345,6 +354,7 @@
     },
     {
       "id": 10,
+      "hotelID": 1,
       "roomNr": "51G",
       "capacity": 21,
       "price": 885.64,
@@ -357,6 +367,7 @@
     },
     {
       "id": 11,
+      "hotelID": 1,
       "roomNr": "14B",
       "capacity": 41,
       "price": 175.09,
@@ -369,6 +380,7 @@
     },
     {
       "id": 12,
+      "hotelID": 1,
       "roomNr": "66Q",
       "capacity": 14,
       "price": 883,
@@ -382,6 +394,7 @@
     },
     {
       "id": 13,
+      "hotelID": 1,
       "roomNr": "27O",
       "capacity": 30,
       "price": 735.87,
@@ -392,6 +405,7 @@
     },
     {
       "id": 14,
+      "hotelID": 1,
       "roomNr": "56H",
       "capacity": 25,
       "price": 715.78,
@@ -402,6 +416,7 @@
     },
     {
       "id": 15,
+      "hotelID": 1,
       "roomNr": "72P",
       "capacity": 12,
       "price": 860.68,
@@ -417,6 +432,7 @@
     },
     {
       "id": 16,
+      "hotelID": 1,
       "roomNr": "83O",
       "capacity": 38,
       "price": 753.05,
@@ -429,6 +445,7 @@
     },
     {
       "id": 17,
+      "hotelID": 1,
       "roomNr": "75L",
       "capacity": 35,
       "price": 474.47,
@@ -439,6 +456,7 @@
     },
     {
       "id": 18,
+      "hotelID": 1,
       "roomNr": "48K",
       "capacity": 15,
       "price": 243.78,
@@ -453,6 +471,7 @@
     },
     {
       "id": 19,
+      "hotelID": 1,
       "roomNr": "82X",
       "capacity": 45,
       "price": 714.06,
@@ -463,6 +482,7 @@
     },
     {
       "id": 20,
+      "hotelID": 1,
       "roomNr": "32V",
       "capacity": 26,
       "price": 447.73,
@@ -477,6 +497,7 @@
     },
     {
       "id": 21,
+      "hotelID": 1,
       "roomNr": "86Z",
       "capacity": 37,
       "price": 887.37,
@@ -489,6 +510,7 @@
     },
     {
       "id": 22,
+      "hotelID": 1,
       "roomNr": "42B",
       "capacity": 37,
       "price": 962.2,
@@ -502,6 +524,7 @@
     },
     {
       "id": 23,
+      "hotelID": 1,
       "roomNr": "76O",
       "capacity": 41,
       "price": 255.15,
@@ -513,6 +536,7 @@
     },
     {
       "id": 24,
+      "hotelID": 1,
       "roomNr": "47Z",
       "capacity": 49,
       "price": 289.67,
@@ -528,6 +552,7 @@
     },
     {
       "id": 25,
+      "hotelID": 1,
       "roomNr": "91E",
       "capacity": 50,
       "price": 450.73,
@@ -538,6 +563,7 @@
     },
     {
       "id": 26,
+      "hotelID": 1,
       "roomNr": "84K",
       "capacity": 5,
       "price": 154.55,
@@ -549,6 +575,7 @@
     },
     {
       "id": 27,
+      "hotelID": 1,
       "roomNr": "28S",
       "capacity": 34,
       "price": 315.66,
@@ -562,6 +589,7 @@
     },
     {
       "id": 28,
+      "hotelID": 1,
       "roomNr": "84T",
       "capacity": 6,
       "price": 308.49,
@@ -572,6 +600,7 @@
     },
     {
       "id": 29,
+      "hotelID": 1,
       "roomNr": "27D",
       "capacity": 48,
       "price": 223.64,
@@ -583,6 +612,7 @@
     },
     {
       "id": 30,
+      "hotelID": 1,
       "roomNr": "97C",
       "capacity": 17,
       "price": 598.87,
@@ -595,6 +625,7 @@
     },
     {
       "id": 31,
+      "hotelID": 1,
       "roomNr": "47L",
       "capacity": 16,
       "price": 741.26,
@@ -609,6 +640,7 @@
     },
     {
       "id": 32,
+      "hotelID": 1,
       "roomNr": "22S",
       "capacity": 13,
       "price": 604.81,
@@ -620,6 +652,7 @@
     },
     {
       "id": 33,
+      "hotelID": 1,
       "roomNr": "73J",
       "capacity": 45,
       "price": 373.91,
@@ -631,6 +664,7 @@
     },
     {
       "id": 34,
+      "hotelID": 1,
       "roomNr": "66B",
       "capacity": 22,
       "price": 699.1,
@@ -645,6 +679,7 @@
     },
     {
       "id": 35,
+      "hotelID": 1,
       "roomNr": "71F",
       "capacity": 6,
       "price": 239.02,
@@ -656,6 +691,7 @@
     },
     {
       "id": 36,
+      "hotelID": 1,
       "roomNr": "42D",
       "capacity": 34,
       "price": 241.75,
@@ -667,6 +703,7 @@
     },
     {
       "id": 37,
+      "hotelID": 1,
       "roomNr": "65O",
       "capacity": 33,
       "price": 855.45,
@@ -681,6 +718,7 @@
     },
     {
       "id": 38,
+      "hotelID": 1,
       "roomNr": "62E",
       "capacity": 3,
       "price": 607.4,
@@ -695,6 +733,7 @@
     },
     {
       "id": 39,
+      "hotelID": 1,
       "roomNr": "94L",
       "capacity": 8,
       "price": 206.1,
@@ -706,6 +745,7 @@
     },
     {
       "id": 40,
+      "hotelID": 1,
       "roomNr": "90H",
       "capacity": 17,
       "price": 472.19,
@@ -720,6 +760,7 @@
     },
     {
       "id": 41,
+      "hotelID": 1,
       "roomNr": "82F",
       "capacity": 20,
       "price": 755.05,
@@ -734,6 +775,7 @@
     },
     {
       "id": 42,
+      "hotelID": 1,
       "roomNr": "92U",
       "capacity": 2,
       "price": 917.7,
@@ -746,6 +788,7 @@
     },
     {
       "id": 43,
+      "hotelID": 1,
       "roomNr": "42R",
       "capacity": 20,
       "price": 376.34,
@@ -758,6 +801,7 @@
     },
     {
       "id": 44,
+      "hotelID": 1,
       "roomNr": "81Q",
       "capacity": 41,
       "price": 999.63,
@@ -769,6 +813,7 @@
     },
     {
       "id": 45,
+      "hotelID": 1,
       "roomNr": "25B",
       "capacity": 24,
       "price": 557.01,
@@ -780,6 +825,7 @@
     },
     {
       "id": 46,
+      "hotelID": 1,
       "roomNr": "31Q",
       "capacity": 21,
       "price": 303.9,
@@ -790,6 +836,7 @@
     },
     {
       "id": 47,
+      "hotelID": 1,
       "roomNr": "54B",
       "capacity": 34,
       "price": 327.37,
@@ -801,6 +848,7 @@
     },
     {
       "id": 48,
+      "hotelID": 1,
       "roomNr": "60P",
       "capacity": 27,
       "price": 289.02,
@@ -812,6 +860,7 @@
     },
     {
       "id": 49,
+      "hotelID": 1,
       "roomNr": "99I",
       "capacity": 13,
       "price": 666.48,
@@ -826,6 +875,7 @@
     },
     {
       "id": 50,
+      "hotelID": 1,
       "roomNr": "46T",
       "capacity": 30,
       "price": 330.38,
@@ -837,6 +887,7 @@
     },
     {
       "id": 51,
+      "hotelID": 1,
       "roomNr": "75I",
       "capacity": 23,
       "price": 881.67,
@@ -848,6 +899,7 @@
     },
     {
       "id": 52,
+      "hotelID": 1,
       "roomNr": "95N",
       "capacity": 41,
       "price": 782.4,
@@ -858,6 +910,7 @@
     },
     {
       "id": 53,
+      "hotelID": 1,
       "roomNr": "58W",
       "capacity": 29,
       "price": 992.05,
@@ -872,6 +925,7 @@
     },
     {
       "id": 54,
+      "hotelID": 1,
       "roomNr": "58M",
       "capacity": 20,
       "price": 537.11,
@@ -885,6 +939,7 @@
     },
     {
       "id": 55,
+      "hotelID": 1,
       "roomNr": "82B",
       "capacity": 45,
       "price": 458.41,
@@ -895,6 +950,7 @@
     },
     {
       "id": 56,
+      "hotelID": 1,
       "roomNr": "37P",
       "capacity": 41,
       "price": 845.9,
@@ -906,6 +962,7 @@
     },
     {
       "id": 57,
+      "hotelID": 1,
       "roomNr": "70Q",
       "capacity": 6,
       "price": 889.19,
@@ -917,6 +974,7 @@
     },
     {
       "id": 58,
+      "hotelID": 1,
       "roomNr": "17D",
       "capacity": 22,
       "price": 755.21,
@@ -932,6 +990,7 @@
     },
     {
       "id": 59,
+      "hotelID": 1,
       "roomNr": "27L",
       "capacity": 15,
       "price": 841.92,
@@ -944,6 +1003,7 @@
     },
     {
       "id": 60,
+      "hotelID": 1,
       "roomNr": "46A",
       "capacity": 27,
       "price": 851.23,
@@ -955,6 +1015,7 @@
     },
     {
       "id": 61,
+      "hotelID": 1,
       "roomNr": "42K",
       "capacity": 45,
       "price": 345.98,
@@ -969,6 +1030,7 @@
     },
     {
       "id": 62,
+      "hotelID": 1,
       "roomNr": "79V",
       "capacity": 49,
       "price": 512.17,
@@ -983,6 +1045,7 @@
     },
     {
       "id": 63,
+      "hotelID": 1,
       "roomNr": "85J",
       "capacity": 43,
       "price": 428.38,
@@ -995,6 +1058,7 @@
     },
     {
       "id": 64,
+      "hotelID": 1,
       "roomNr": "12H",
       "capacity": 22,
       "price": 255.18,
@@ -1005,6 +1069,7 @@
     },
     {
       "id": 65,
+      "hotelID": 1,
       "roomNr": "95X",
       "capacity": 11,
       "price": 520.82,
@@ -1018,6 +1083,7 @@
     },
     {
       "id": 66,
+      "hotelID": 1,
       "roomNr": "88F",
       "capacity": 1,
       "price": 771.53,
@@ -1031,6 +1097,7 @@
     },
     {
       "id": 67,
+      "hotelID": 1,
       "roomNr": "65I",
       "capacity": 42,
       "price": 395.37,
@@ -1046,6 +1113,7 @@
     },
     {
       "id": 68,
+      "hotelID": 1,
       "roomNr": "94Z",
       "capacity": 24,
       "price": 786.47,
@@ -1057,6 +1125,7 @@
     },
     {
       "id": 69,
+      "hotelID": 1,
       "roomNr": "58R",
       "capacity": 1,
       "price": 175.36,
@@ -1070,6 +1139,7 @@
     },
     {
       "id": 70,
+      "hotelID": 1,
       "roomNr": "75R",
       "capacity": 50,
       "price": 552.25,
@@ -1083,6 +1153,7 @@
     },
     {
       "id": 71,
+      "hotelID": 1,
       "roomNr": "90T",
       "capacity": 43,
       "price": 999.16,
@@ -1094,6 +1165,7 @@
     },
     {
       "id": 72,
+      "hotelID": 1,
       "roomNr": "47T",
       "capacity": 37,
       "price": 748.31,
@@ -1107,6 +1179,7 @@
     },
     {
       "id": 73,
+      "hotelID": 1,
       "roomNr": "46J",
       "capacity": 9,
       "price": 65.67,
@@ -1120,6 +1193,7 @@
     },
     {
       "id": 74,
+      "hotelID": 1,
       "roomNr": "80Z",
       "capacity": 36,
       "price": 192.86,
@@ -1134,6 +1208,7 @@
     },
     {
       "id": 75,
+      "hotelID": 1,
       "roomNr": "38W",
       "capacity": 10,
       "price": 149.04,
@@ -1147,6 +1222,7 @@
     },
     {
       "id": 76,
+      "hotelID": 1,
       "roomNr": "27E",
       "capacity": 1,
       "price": 665.81,
@@ -1159,6 +1235,7 @@
     },
     {
       "id": 77,
+      "hotelID": 1,
       "roomNr": "38C",
       "capacity": 42,
       "price": 269.23,
@@ -1169,6 +1246,7 @@
     },
     {
       "id": 78,
+      "hotelID": 1,
       "roomNr": "60B",
       "capacity": 20,
       "price": 527.76,
@@ -1180,6 +1258,7 @@
     },
     {
       "id": 79,
+      "hotelID": 1,
       "roomNr": "85Z",
       "capacity": 37,
       "price": 795.73,
@@ -1190,6 +1269,7 @@
     },
     {
       "id": 80,
+      "hotelID": 1,
       "roomNr": "33K",
       "capacity": 11,
       "price": 380.64,
@@ -1203,6 +1283,7 @@
     },
     {
       "id": 81,
+      "hotelID": 1,
       "roomNr": "63Y",
       "capacity": 34,
       "price": 332.6,
@@ -1217,6 +1298,7 @@
     },
     {
       "id": 82,
+      "hotelID": 1,
       "roomNr": "13R",
       "capacity": 42,
       "price": 916.7,
@@ -1232,6 +1314,7 @@
     },
     {
       "id": 83,
+      "hotelID": 1,
       "roomNr": "78H",
       "capacity": 39,
       "price": 165.24,
@@ -1245,6 +1328,7 @@
     },
     {
       "id": 84,
+      "hotelID": 1,
       "roomNr": "64F",
       "capacity": 20,
       "price": 623.7,
@@ -1258,6 +1342,7 @@
     },
     {
       "id": 85,
+      "hotelID": 1,
       "roomNr": "22T",
       "capacity": 5,
       "price": 864.29,
@@ -1273,6 +1358,7 @@
     },
     {
       "id": 86,
+      "hotelID": 1,
       "roomNr": "67X",
       "capacity": 18,
       "price": 879.06,
@@ -1287,6 +1373,7 @@
     },
     {
       "id": 87,
+      "hotelID": 1,
       "roomNr": "58C",
       "capacity": 9,
       "price": 957.93,
@@ -1302,6 +1389,7 @@
     },
     {
       "id": 88,
+      "hotelID": 1,
       "roomNr": "54D",
       "capacity": 23,
       "price": 579.03,
@@ -1313,6 +1401,7 @@
     },
     {
       "id": 89,
+      "hotelID": 1,
       "roomNr": "15P",
       "capacity": 43,
       "price": 803.01,
@@ -1324,6 +1413,7 @@
     },
     {
       "id": 90,
+      "hotelID": 1,
       "roomNr": "87K",
       "capacity": 41,
       "price": 136.25,
@@ -1339,6 +1429,7 @@
     },
     {
       "id": 91,
+      "hotelID": 1,
       "roomNr": "20W",
       "capacity": 32,
       "price": 60.22,
@@ -1349,6 +1440,7 @@
     },
     {
       "id": 92,
+      "hotelID": 1,
       "roomNr": "42K",
       "capacity": 30,
       "price": 908.36,
@@ -1362,6 +1454,7 @@
     },
     {
       "id": 93,
+      "hotelID": 1,
       "roomNr": "62R",
       "capacity": 24,
       "price": 505.84,
@@ -1375,6 +1468,7 @@
     },
     {
       "id": 94,
+      "hotelID": 1,
       "roomNr": "23F",
       "capacity": 48,
       "price": 201.64,
@@ -1386,6 +1480,7 @@
     },
     {
       "id": 95,
+      "hotelID": 1,
       "roomNr": "44M",
       "capacity": 39,
       "price": 981.31,
@@ -1397,6 +1492,7 @@
     },
     {
       "id": 96,
+      "hotelID": 1,
       "roomNr": "81R",
       "capacity": 3,
       "price": 573.77,
@@ -1409,6 +1505,7 @@
     },
     {
       "id": 97,
+      "hotelID": 1,
       "roomNr": "77Y",
       "capacity": 44,
       "price": 222.99,
@@ -1420,6 +1517,7 @@
     },
     {
       "id": 98,
+      "hotelID": 1,
       "roomNr": "28D",
       "capacity": 17,
       "price": 202,
@@ -1430,6 +1528,7 @@
     },
     {
       "id": 99,
+      "hotelID": 1,
       "roomNr": "54F",
       "capacity": 31,
       "price": 119.71,
@@ -1444,6 +1543,7 @@
     },
     {
       "id": 100,
+      "hotelID": 1,
       "roomNr": "73F",
       "capacity": 3,
       "price": 892.96,
@@ -1457,6 +1557,7 @@
       "isMeetingRoom": false
     },
     {
+      "hotelID": 1,
       "roomNr": "<string>",
       "capacity": "<integer>",
       "price": "<number>",
@@ -1466,6 +1567,15 @@
       ],
       "isMeetingRoom": "<boolean>",
       "id": 101
+    },
+    {
+      "hotelID": 3,
+      "roomNr": "a24",
+      "isMeetingRoom": null,
+      "capacity": "5",
+      "price": "24.55",
+      "utilities": "detail is best",
+      "id": 102
     }
   ],
   "participants": [

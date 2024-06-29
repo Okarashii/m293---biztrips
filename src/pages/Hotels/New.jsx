@@ -31,7 +31,7 @@ export const newHotelAction = async ({request}) => {
 	return redirect("/hotels/" + hotel.id);
 }
 
-export default function AddHotel() {
+export default function NewHotel() {
 	const airportList = useLoaderData();
 
 	return (
