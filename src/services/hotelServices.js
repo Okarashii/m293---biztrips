@@ -45,3 +45,11 @@ export async function addRoom(room) {
 
 	return response;
 }
+
+export async function deleteRoom(roomID, hotelID) {
+	const response = await fetch(baseUrl + "hotels/" + hotelID + "/rooms/" + roomID, {
+		method: "DELETE"
+	});
+
+	return response;
+}

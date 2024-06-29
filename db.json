@@ -1567,15 +1567,6 @@
       ],
       "isMeetingRoom": "<boolean>",
       "id": 101
-    },
-    {
-      "hotelID": 3,
-      "roomNr": "a24",
-      "isMeetingRoom": null,
-      "capacity": "5",
-      "price": "24.55",
-      "utilities": "detail is best",
-      "id": 102
     }
   ],
   "participants": [

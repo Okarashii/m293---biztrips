@@ -442,18 +442,9 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-form {
-  display: grid;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  row-gap: 0.5rem;
-  border-radius: 0.75rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-  padding: 1rem;
-}
+/* form {
+		@apply grid grid-cols-2 w-fit gap-y-2 bg-slate-600 rounded-xl p-4;
+	} */
 
 button {
   grid-column: span 2 / span 2;
@@ -508,6 +499,10 @@ h5 {
 h6 {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+th, td {
+  padding-right: 1rem;
 }
 
 *, ::before, ::after {
@@ -685,31 +680,8 @@ h6 {
   width: 100vw;
 }
 
-.border-collapse {
-  border-collapse: collapse;
-}
-
-.border-separate {
-  border-collapse: separate;
-}
-
-.border-spacing-4 {
-  --tw-border-spacing-x: 1rem;
-  --tw-border-spacing-y: 1rem;
-  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
-}
-
-.border-spacing-x-4 {
-  --tw-border-spacing-x: 1rem;
-  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
-}
-
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -744,6 +716,10 @@ h6 {
   column-gap: 2rem;
 }
 
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
 .justify-self-start {
   justify-self: start;
 }
@@ -758,6 +734,10 @@ h6 {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .rounded-br-2xl {
@@ -838,4 +818,14 @@ h6 {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.hover\:bg-slate-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.aria-selected\:bg-slate-400[aria-selected="true"] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }

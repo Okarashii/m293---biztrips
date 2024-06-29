@@ -1,6 +1,7 @@
-import { useLoaderData, Form } from "react-router-dom";
-import { getHotel, getRooms, addRoom } from '../../services/hotelServices';
+import { useLoaderData, Form, useFormAction } from "react-router-dom";
+import { getHotel, getRooms, addRoom, deleteRoom } from '../../services/hotelServices';
 import { getAirport } from '../../services/airportServices';
+import { useState } from "react";
 
 export const hotelLoader = async ({params}) => {
 	console.log(params.hotelID);
@@ -38,7 +39,16 @@ export const hotelAction = async ({params, request}) => {
 			});
 			return null;
 		}
+		case "DELETE": {
+			const formData = await request.formData();
+			const roomIDs = formData.get("roomIDs").split(",").map(r => Number.parseInt(r));
+			roomIDs.forEach(async (id) => {
+				await deleteRoom(id, params.hotelID);
+			})
+			return null;
+		}
 		default: {
+			console.log("request method: ", request.method);
 			return null;
 		}
 	}
@@ -84,10 +94,21 @@ function HotelData({hotel, airport}) {
 }
 
 function RoomTable({heading, rooms}) {
+	const [selectedRoomIDs, setSelectedRoomIDs] = useState([]);
+
+	const handleRowClick = (id) => {
+		if (selectedRoomIDs.includes(id)) {
+			setSelectedRoomIDs([...selectedRoomIDs.filter((i) => i !== id)])
+		}
+		else {
+			setSelectedRoomIDs([...selectedRoomIDs, id])
+		}
+	}
+
 	return(
-		<div className="surface">
+		<Form className="surface">
 			<h5>{heading}</h5>
-			<table className="border-separate border-spacing-x-4">
+			<table>
 				<thead className="text-left">
 					<th>Nr</th>
 					<th>Platz</th>
@@ -96,7 +117,9 @@ function RoomTable({heading, rooms}) {
 				</thead>
 				<tbody>
 					{rooms.map(room => (
-						<tr>
+						<tr key={room.id} onClick={() => handleRowClick(room.id)}
+							aria-selected={selectedRoomIDs.includes(room.id)}
+							className="hover:bg-slate-800 aria-selected:bg-slate-400">
 							<td>{room.roomNr}</td>
 							<td>{room.capacity}</td>
 							<td>CHF {room.price}</td>
@@ -105,13 +128,17 @@ function RoomTable({heading, rooms}) {
 					))}
 				</tbody>
 			</table>
-		</div>
+
+			<input type="hidden" name="roomIDs" value={selectedRoomIDs}/>
+
+			<button type="submit" formMethod="delete" disabled={selectedRoomIDs.length === 0}>Auswahl Entfernen</button>
+		</Form>
 	)
 }
 
 function NewRoomForm() {
 	return (
-		<Form className="surface grid grid-cols-2 h-fit justify-items-start" method="put" navigate={false}>
+		<Form className="surface grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2 bg-slate-600 rounded-xl p-4" method="put" navigate={false}>
 			<h5>Raum Hinzufügen</h5>
 			{/* <input type="hidden" name="hotelID"/> */}
 			<label htmlFor="isMeetingRoom">Meetingraum</label>
