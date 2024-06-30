@@ -7,8 +7,12 @@
 		@apply bg-slate-800;
 	}
 
-	form {
+	/* form {
 		@apply grid grid-cols-2 w-fit gap-y-2 bg-slate-600 rounded-xl p-4;
+	} */
+
+	input:read-only {
+		@apply bg-transparent;
 	}
 
 	button {
@@ -16,8 +20,12 @@
 		@apply bg-slate-600 px-4 py-2 rounded-lg w-fit;
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		@apply col-span-full;
+	}
+
 	h1, h3, h5 {
-		@apply underline;
+		@apply underline mb-2;
 	}
 
 	h1 {
@@ -42,5 +50,19 @@
 
 	h6 {
 		@apply text-xl;
+	}
+
+	th, td {
+		@apply pr-4;
+	}
+
+	dialog[open]::backdrop {
+		background-color: rgb(0 0 0 / 25%);
+	}
+}
+
+@layer components {
+	.surface {
+		@apply bg-slate-700 p-4 rounded-lg;
 	}
 }

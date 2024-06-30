@@ -442,17 +442,12 @@ video {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-form {
-  display: grid;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  row-gap: 0.5rem;
-  border-radius: 0.75rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-  padding: 1rem;
+/* form {
+		@apply grid grid-cols-2 w-fit gap-y-2 bg-slate-600 rounded-xl p-4;
+	} */
+
+input:read-only {
+  background-color: transparent;
 }
 
 button {
@@ -471,7 +466,12 @@ button {
   padding-bottom: 0.5rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  grid-column: 1 / -1;
+}
+
 h1, h3, h5 {
+  margin-bottom: 0.5rem;
   text-decoration-line: underline;
 }
 
@@ -503,6 +503,14 @@ h5 {
 h6 {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+th, td {
+  padding-right: 1rem;
+}
+
+dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 25%);
 }
 
 *, ::before, ::after {
@@ -613,16 +621,39 @@ h6 {
   --tw-contain-style:  ;
 }
 
+.surface {
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+  padding: 1rem;
+}
+
 .col-span-2 {
   grid-column: span 2 / span 2;
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .flex {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-fit {
@@ -665,8 +696,36 @@ h6 {
   flex-direction: column;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-x-8 {
+  column-gap: 2rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
 }
 
 .justify-self-start {
@@ -683,6 +742,10 @@ h6 {
 
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .rounded-br-2xl {
@@ -711,6 +774,14 @@ h6 {
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.p-0 {
+  padding: 0px;
 }
 
 .p-4 {
@@ -747,6 +818,10 @@ h6 {
   padding-bottom: 0.5rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -755,4 +830,8 @@ h6 {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
