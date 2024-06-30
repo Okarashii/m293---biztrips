@@ -1,7 +1,7 @@
 import './main.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import { createHashRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import AddAirport, { addAirportLoader } from "./pages/AddAirport/AddAirport";
 import AddFlight, { addFlightLoader } from './pages/AddFlight/AddFlight';
@@ -11,7 +11,7 @@ import Trips from './pages/AddTrip/Trips';
 import Layout from './pages/Layout';
 import Hotels from './pages/Hotels/Hotels';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
 	createRoutesFromElements(
 		<Route element={<Layout/>}>
 			<Route index path="/" element={<Home/>}/>
