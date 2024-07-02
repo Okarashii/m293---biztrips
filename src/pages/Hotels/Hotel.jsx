@@ -1,8 +1,7 @@
-import { useLoaderData, Await, defer } from "react-router-dom";
-import { Suspense } from "react";
+import { useParams } from 'react-router-dom';
 import { getHotel, getRooms, addRoom, deleteRoom, updateRoom } from '../../services/hotelServices';
 import { getAirport } from '../../services/airportServices';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormModal from "../../components/FormModal";
 
 export const hotelLoader = async ({params}) => {
@@ -10,12 +9,6 @@ export const hotelLoader = async ({params}) => {
 	const hotel = await getHotel(params.hotelID);
 	const airport = await getAirport(hotel.nearAirportID);
 	const rooms = getRooms(hotel.id);
-
-	return defer({
-		hotel,
-		airport,
-		rooms
-	});
 }
 
 export const hotelAction = async ({params, request}) => {
@@ -59,8 +52,25 @@ export const hotelAction = async ({params, request}) => {
 }
 
 export default function Hotel() {
-	const {hotel, airport, rooms} = useLoaderData();
+	const [hotel, setHotel] = useState(undefined);
+	const [airport, setAirport] = useState(undefined);
+	const [rooms, setRooms] = useState(undefined);
+	const {hotelID} = useParams();
+
+	useEffect(() => {
+		getHotel(hotelID)
+			.then(res => res.json())
+			.then(h => setHotel(h));
+		getAirport(hotel.nearAirportID)
+			.then(res => res.json())
+			.then(a => setAirport(a.name));
+		getRooms(hotelID)
+			.then(res => res.json())
+			.then(r => setRooms(r));
+	}, [hotelID, hotel])
+
 	const [NewRoomModal, setNewModalOpen] = FormModal("put");
+
 
 	return (
 		<div className="flex justify-between">
@@ -69,20 +79,8 @@ export default function Hotel() {
 					<HotelData hotel={hotel} airport={airport}/>
 					<button className="h-fit" onClick={() => setNewModalOpen(true)}>Neuer Raum Hinzufügen</button>
 				</span>
-				<Suspense fallback={<RoomTableLoading/>}>
-					<Await resolve={rooms}>
-						{
-							(rooms) => {
-								return (
-									<>
-										<RoomTable rooms={rooms.filter(r => !r.isMeetingRoom)} heading="Zimmer"/>
-										<RoomTable rooms={rooms.filter(r => r.isMeetingRoom)} heading="Meetingräume"/>
-									</>
-								)
-							}
-						}
-					</Await>
-				</Suspense>
+				<RoomTable rooms={rooms.filter(r => !r.isMeetingRoom)} heading="Zimmer"/>
+				<RoomTable rooms={rooms.filter(r => r.isMeetingRoom)} heading="Meetingräume"/>
 			</div>
 
 			<NewRoomModal className="surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
