@@ -25,9 +25,9 @@ export default function FormModal(method="post", action) {
 		function({className, children}) {
 			return (
 				<dialog ref={dialogRef} className="bg-transparent">
-					<Form className={className} action={action} method={method} navigate={false} onReset={() => setOpen(false)} onSubmit={handleSubmit}>
+					<form className={className} action={action} method={method} navigate={false} onReset={() => setOpen(false)} onSubmit={handleSubmit}>
 						{children}
-					</Form>
+					</form>
 				</dialog>
 			)
 		},

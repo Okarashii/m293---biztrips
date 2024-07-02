@@ -8,20 +8,6 @@ import Trips from './pages/AddTrip/Trips';
 import Layout from './pages/Layout';
 import Hotels from './pages/Hotels/Hotels';
 
-const router = createHashRouter(
-	createRoutesFromElements(
-		<Route element={<Layout/>}>
-			<Route index path="/" element={<Home/>}/>
-			<Route path="/airports/new" element={<AddAirport/>} loader={addAirportLoader}/>
-			<Route path="/flights/new" element={<AddFlight/>} loader={addFlightLoader}/>
-			<Route path="/hotels" element={<Hotels/>}/>
-			<Route path="/hotels/:hotelID" element={<Hotel/>} loader={hotelLoader} action={hotelAction}/>
-			<Route path="/hotels/new" element={<NewHotel/>} loader={addHotelLoader} action={newHotelAction}/>
-			<Route path="/bookTrip" element={<Trips/>}/>
-		</Route>
-	)
-)
-
 export default function App() {
 	return (
 		<>
@@ -31,7 +17,7 @@ export default function App() {
 					<Route path="/airports/new" element={<AddAirport/>} loader={addAirportLoader}/>
 					<Route path="/flights/new" element={<AddFlight/>} loader={addFlightLoader}/>
 					<Route path="/hotels" element={<Hotels/>}/>
-					<Route path="/hotels/:hotelID" element={<Hotel/>} loader={hotelLoader} action={hotelAction}/>
+					<Route path="/hotels/:hotelID" element={<Hotel/>} action={hotelAction}/>
 					<Route path="/hotels/new" element={<NewHotel/>} loader={addHotelLoader} action={newHotelAction}/>
 					<Route path="/bookTrip" element={<Trips/>}/>
 				</Route>

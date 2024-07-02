@@ -4,12 +4,12 @@ import { getAirport } from '../../services/airportServices';
 import { useState, useEffect } from "react";
 import FormModal from "../../components/FormModal";
 
-export const hotelLoader = async ({params}) => {
-	console.log(params.hotelID);
-	const hotel = await getHotel(params.hotelID);
-	const airport = await getAirport(hotel.nearAirportID);
-	const rooms = getRooms(hotel.id);
-}
+// export const hotelLoader = async ({params}) => {
+// 	console.log(params.hotelID);
+// 	const hotel = await getHotel(params.hotelID);
+// 	const airport = await getAirport(hotel.nearAirportID);
+// 	const rooms = getRooms(hotel.id);
+// }
 
 export const hotelAction = async ({params, request}) => {
 	const hotelID = Number.parseInt(params.hotelID);
@@ -52,22 +52,20 @@ export const hotelAction = async ({params, request}) => {
 }
 
 export default function Hotel() {
-	const [hotel, setHotel] = useState(undefined);
-	const [airport, setAirport] = useState(undefined);
-	const [rooms, setRooms] = useState(undefined);
+	const [hotel, setHotel] = useState({});
+	const [airport, setAirport] = useState("");
+	const [rooms, setRooms] = useState([]);
 	const {hotelID} = useParams();
 
 	useEffect(() => {
 		getHotel(hotelID)
-			.then(res => res.json())
-			.then(h => setHotel(h));
-		getAirport(hotel.nearAirportID)
-			.then(res => res.json())
-			.then(a => setAirport(a.name));
+			.then(({hotel, airport}) => {
+				setHotel(hotel);
+				setAirport(airport)
+			});
 		getRooms(hotelID)
-			.then(res => res.json())
 			.then(r => setRooms(r));
-	}, [hotelID, hotel])
+	}, [])
 
 	const [NewRoomModal, setNewModalOpen] = FormModal("put");
 
