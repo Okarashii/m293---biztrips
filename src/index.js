@@ -27,6 +27,7 @@ const router = createHashRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-		<RouterProvider router={router}/>
+		{/* <RouterProvider router={router}/> */}
+		<h1>This is a test</h1>
 	</React.StrictMode>
 );
