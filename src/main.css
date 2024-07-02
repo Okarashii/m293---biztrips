@@ -656,6 +656,10 @@ dialog[open]::backdrop {
   display: none;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -668,6 +672,10 @@ dialog[open]::backdrop {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-32 {
+  height: 8rem;
 }
 
 .w-64 {
@@ -692,12 +700,24 @@ dialog[open]::backdrop {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -720,6 +740,10 @@ dialog[open]::backdrop {
   gap: 1rem;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .gap-x-8 {
   column-gap: 2rem;
 }
@@ -738,6 +762,10 @@ dialog[open]::backdrop {
 
 .justify-self-center {
   justify-self: center;
+}
+
+.overflow-clip {
+  overflow: clip;
 }
 
 .rounded-lg {
@@ -780,12 +808,26 @@ dialog[open]::backdrop {
   background-color: transparent;
 }
 
+.bg-slate-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+}
+
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
 .p-0 {
   padding: 0px;
 }
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-20 {

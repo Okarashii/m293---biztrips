@@ -1,3 +1,5 @@
+import { getAirport } from "./airportServices";
+
 const baseUrl = process.env.REACT_APP_API_BASE_URL;
 
 export async function getHotel(id) {
@@ -15,10 +17,15 @@ export async function getHotel(id) {
 	throw hotelRes;
 }
 
-export async function getHotels({airportCode, country, city}) {
-	const response = await fetch(baseUrl + "hotels");
+export async function getHotels({airportID, country, city}) {
+	let params = airportID || country || city ? "?" : "";
+	if (airportID) params += "nearAirportID=" + airportID;
+
+	const response = await fetch(baseUrl + "hotels" + params);
 	const hotels = await response.json();
-	
+	if (response.ok) {
+		return hotels;
+	}
 	throw response;
 }
 
@@ -41,9 +48,6 @@ export async function getRooms(hotelID) {
 
 	if (response.ok) {
 		const rooms = await response.json();
-		// const hotelRooms = rooms.filter(r => r.hotelID === hotelID);
-		// const hotelRooms = rooms.filter(r => r.hotelID === hotelID);
-		// console.log("rooms Length for", hotelID, rooms);
 		return rooms;
 	}
 
