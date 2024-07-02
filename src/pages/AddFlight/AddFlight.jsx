@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react"
 import { getAirports } from '../../services/airportServices';
 
-export const addFlightLoader = ({params}) => {
-	return {};
-}
-
 export default function Flights() {
 	const [airports, setAirports] = useState([]);
 
