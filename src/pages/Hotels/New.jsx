@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Form } from "react-router-dom";
 import { getAirports } from "../../services/airportServices";
 import { createHotel } from "../../services/hotelServices";
@@ -32,10 +33,13 @@ export const newHotelAction = async ({request}) => {
 }
 
 export default function NewHotel() {
-	const airportList = useLoaderData();
+	const [airportList, setAirportList] = useState([]);
+	useEffect(() => {
+		getAirports().then(a => setAirportList(a));
+	}, [])
 
 	return (
-		<Form className="grid grid-cols-2 w-fit bg-slate-700 p-4 rounded-lg" method="POST" action="/hotels/new">
+		<form className="grid grid-cols-2 w-fit bg-slate-700 p-4 rounded-lg" method="POST" action="/hotels/new">
 			<label htmlFor="name">Name</label>
 			<input required type="text" name="name"/>
 			<label htmlFor="address">Adresse</label>
@@ -56,6 +60,6 @@ export default function NewHotel() {
 			</select>
 
 			<button type="submit">Hinzufügen</button>
-		</Form>
+		</form>
 	)
 }
