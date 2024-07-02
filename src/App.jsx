@@ -26,13 +26,15 @@ export default function App() {
 	return (
 		<>
 			<Routes>
-				<Route index path="/" element={<Home/>}/>
-				<Route path="/airports/new" element={<AddAirport/>} loader={addAirportLoader}/>
-				<Route path="/flights/new" element={<AddFlight/>} loader={addFlightLoader}/>
-				<Route path="/hotels" element={<Hotels/>}/>
-				<Route path="/hotels/:hotelID" element={<Hotel/>} loader={hotelLoader} action={hotelAction}/>
-				<Route path="/hotels/new" element={<NewHotel/>} loader={addHotelLoader} action={newHotelAction}/>
-				<Route path="/bookTrip" element={<Trips/>}/>
+				<Route element={<Layout/>}>
+					<Route index path="/" element={<Home/>}/>
+					<Route path="/airports/new" element={<AddAirport/>} loader={addAirportLoader}/>
+					<Route path="/flights/new" element={<AddFlight/>} loader={addFlightLoader}/>
+					<Route path="/hotels" element={<Hotels/>}/>
+					<Route path="/hotels/:hotelID" element={<Hotel/>} loader={hotelLoader} action={hotelAction}/>
+					<Route path="/hotels/new" element={<NewHotel/>} loader={addHotelLoader} action={newHotelAction}/>
+					<Route path="/bookTrip" element={<Trips/>}/>
+				</Route>
 			</Routes>
 		</>
 	)
