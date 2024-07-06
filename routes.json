@@ -1,4 +1,5 @@
 {
+	"/airports/:iataCode": "/airports?iataCode=:iataCode",
 	"/hotels": "/hotels",
 	"/hotels/:hotelID": "/hotels/:hotelID",
 	"/hotels/:hotelID/rooms": "/rooms?hotelID=:hotelID",

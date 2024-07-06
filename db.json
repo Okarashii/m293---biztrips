@@ -3,86 +3,9 @@
     {
       "id": 1,
       "name": "Zürich Airport",
-      "code": "ZRH",
+      "iataCode": "ZRH",
       "country": "Switzerland",
       "city": "Zürich"
-    },
-    {
-      "id": 2,
-      "name": "Heathrow Airport",
-      "code": "LHR",
-      "country": "United Kingdom",
-      "city": "London"
-    },
-    {
-      "id": 3,
-      "name": "Tokyo Haneda Airport",
-      "code": "HND",
-      "country": "Japan",
-      "city": "Tokyo"
-    },
-    {
-      "id": 4,
-      "name": "Dubai International Airport",
-      "code": "DXB",
-      "country": "United Arab Emirates",
-      "city": "Dubai"
-    },
-    {
-      "id": 5,
-      "name": "Charles de Gaulle Airport",
-      "code": "CDG",
-      "country": "France",
-      "city": "Paris"
-    },
-    {
-      "id": 6,
-      "name": "Beijing Capital International Airport",
-      "code": "PEK",
-      "country": "China",
-      "city": "Beijing"
-    },
-    {
-      "id": 7,
-      "name": "Los Angeles International Airport",
-      "code": "LAX",
-      "country": "United States",
-      "city": "Los Angeles"
-    },
-    {
-      "id": 8,
-      "name": "Changi Airport",
-      "code": "SIN",
-      "country": "Singapore",
-      "city": "Singapore"
-    },
-    {
-      "id": 9,
-      "name": "Frankfurt Airport",
-      "code": "FRA",
-      "country": "Germany",
-      "city": "Frankfurt"
-    },
-    {
-      "id": 10,
-      "name": "Sydney Kingsford Smith Airport",
-      "code": "SYD",
-      "country": "Australia",
-      "city": "Sydney"
-    },
-    {
-      "name": "Beijing Capital International Airport",
-      "code": "PEK",
-      "country": "China",
-      "city": "Beijing",
-      "id": 11
-    },
-    {
-      "name": "Dubai International Airport",
-      "code": "DXB",
-      "country": "United Arab Emirates",
-      "city": "Dubai",
-      "id": 12
     }
   ],
   "flights": [
@@ -210,7 +133,7 @@
   "hotels": [
     {
       "id": 1,
-	  "img": "/images/items/1.jpg",
+      "img": "/images/items/1.jpg",
       "nearAirportID": 2,
       "name": "Holiday Inn",
       "address": "Hollywoodstreet 42",
@@ -239,36 +162,36 @@
       "nearAirportID": "3",
       "id": 3
     },
-	{
-		"id": 4,
-		"nearAirportID": 2,
-		"name": "Holiday Inn",
-		"address": "Hollywoodstreet 42",
-		"city": "Los Angeles",
-		"contactFirstname": "Sam",
-		"contactLastname": "Learner",
-		"contactEmail": "s.learner@holiday.com"
-	  },
-	  {
-		"name": "nam",
-		"address": "add",
-		"city": "cit",
-		"contactFirstname": "fir",
-		"contactLastname": "las",
-		"contactEmail": "ema",
-		"nearAirportID": "1",
-		"id": 5
-	  },
-	  {
-		"name": "Hilton",
-		"address": "Hotelway 99",
-		"city": "New York",
-		"contactFirstname": "Henry",
-		"contactLastname": "Smith",
-		"contactEmail": "hsmith@hilton.com",
-		"nearAirportID": "3",
-		"id": 6
-	  }
+    {
+      "id": 4,
+      "nearAirportID": 2,
+      "name": "Holiday Inn",
+      "address": "Hollywoodstreet 42",
+      "city": "Los Angeles",
+      "contactFirstname": "Sam",
+      "contactLastname": "Learner",
+      "contactEmail": "s.learner@holiday.com"
+    },
+    {
+      "name": "nam",
+      "address": "add",
+      "city": "cit",
+      "contactFirstname": "fir",
+      "contactLastname": "las",
+      "contactEmail": "ema",
+      "nearAirportID": "1",
+      "id": 5
+    },
+    {
+      "name": "Hilton",
+      "address": "Hotelway 99",
+      "city": "New York",
+      "contactFirstname": "Henry",
+      "contactLastname": "Smith",
+      "contactEmail": "hsmith@hilton.com",
+      "nearAirportID": "3",
+      "id": 6
+    }
   ],
   "rooms": [
     {
