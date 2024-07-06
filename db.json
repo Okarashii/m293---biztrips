@@ -50,43 +50,70 @@
       "contactEmail": "s.learner@holiday.com"
     }
   ],
-  "rooms": [],
+  "rooms": [
+    {
+      "hotelID": 1,
+      "roomNr": "051",
+      "capacity": 5,
+      "price": 75,
+      "isMeetingRoom": false,
+      "id": 1
+    },
+    {
+      "hotelID": 1,
+      "roomNr": "k-022",
+      "capacity": 25,
+      "price": 250,
+      "isMeetingRoom": true,
+      "id": 2
+    }
+  ],
   "participants": [
     {
-      "firstname": "<string>",
-      "lastname": "<string>",
-      "address": "<string>",
-      "city": "<string>",
-      "email": "<string>",
+      "tripID": 1,
+      "firstname": "Joe",
+      "lastname": "Biden",
+      "address": "Obamnastreet 22",
+      "city": "Washington D.C.",
+      "email": "j.biden@potus.us.gov",
       "id": 1
     }
   ],
   "meetings": [
     {
-      "hotelID": "<integer>",
-      "meetingRoomID": {
-        "value": "reference #/components/schemas/MeetingRoomID not found in the OpenAPI spec"
+      "tripID": 1,
+      "hotelID": 1,
+      "meetingRoomNr": "k-22",
+      "date": {
+        "year": 2024,
+        "month": 8,
+        "day": 2
       },
-      "startDateTime": "<dateTime>",
-      "endDateTime": "<dateTime>",
-      "id": 1
+      "startTime": {
+        "hour": 13,
+        "minute": 0
+      },
+      "endTime": {
+        "hour": 16,
+        "minute": 30
+      },
+      "id": 2
     }
   ],
-  "planeTickets": [
-    {
-      "flightID": "<integer>",
-      "departureDateTime": "<dateTime>",
-      "arrivalDateTime": "<dateTime>",
-      "class": "first",
-      "price": "<number>",
-      "id": 1
-    }
-  ],
+  "planeTickets": [],
   "hotelbooking": [],
   "trips": [
     {
-      "startDate": "<date>",
-      "endDate": "<date>",
+      "startDate": {
+        "year": 2024,
+        "month": 8,
+        "day": 1
+      },
+      "endDate": {
+        "year": 2024,
+        "month": 8,
+        "day": 12
+      },
       "id": 1
     }
   ]
