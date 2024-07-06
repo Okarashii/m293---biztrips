@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const dbPath = path.resolve(__dirname, 'db.json');
+
 const readDBObject = (object) => {
 	const db = JSON.parse(fs.readFileSync('./db.json'));
 	return db[object];
@@ -12,16 +14,27 @@ module.exports = (req, res, next) => {
 			next();
 			break;
 		case "POST":
-			const { id, iataCode } = req.body;
-			console.log(iataCode);
-			if (id !== undefined || iataCode !== undefined) {
-				const dbPath = path.resolve(__dirname, 'db.json');
-				const resourceName = req.path.substring(1);
-				const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+			const { id } = req.body;
+			const resourceName = req.path.substring(1);
+			console.log(resourceName);
+			if (id !== undefined) {
+				if (isConflictingID(id, resourceName)) {
+					res.status(409).jsonp();
+					break;
+				}
 
-				const existingEntry = db[resourceName] && db[resourceName].find(item => item.id == id || (item.iataCode !== undefined && item.iataCode === iataCode));
-				
-				if (existingEntry) {
+			}
+
+			if (resourceName === "airports") {
+				const { iataCode } = req.body;
+				if (isConflictingIATACode(iataCode)) {
+					res.status(409).jsonp();
+					break;
+				}
+			}
+			else if (resourceName === "rooms") {
+				const { roomNr, hotelID } = req.body;
+				if (isConflictingRoomNr(hotelID, roomNr)) {
 					res.status(409).jsonp();
 					break;
 				}
@@ -47,4 +60,21 @@ module.exports = (req, res, next) => {
 			}
 			break;
 	}
+}
+
+function isConflictingID(id, resourceName) {
+	const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+	return db[resourceName] && db[resourceName].find(item => item.id == id);
+}
+
+function isConflictingIATACode(iataCode) {
+	const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+	return db['airports'].find(item => item.iataCode === iataCode);
+}
+
+function isConflictingRoomNr(hotelID, roomNr) {
+	console.log("HotelID", hotelID);
+	console.log("roomNr", roomNr);
+	const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+	return db['rooms'].find(item => item.roomNr === roomNr && item.hotelID == hotelID);
 }
