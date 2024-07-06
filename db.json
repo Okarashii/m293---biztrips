@@ -6,6 +6,13 @@
       "iataCode": "ZRH",
       "country": "Switzerland",
       "city": "Zürich"
+    },
+    {
+      "iataCode": "LAX",
+      "name": "Los Angeles International Airport",
+      "country": "United States",
+      "city": "Los Angeles",
+      "id": 2
     }
   ],
   "flights": [
