@@ -33,7 +33,7 @@ const hotelSchema = {
 		address: "",
 		city: "",
 		contactFirstname: "",
-		contactlastname: "",
+		contactLastname: "",
 		contactEmail: "",
 	},
 	optional: {
@@ -185,7 +185,16 @@ function hasValidProps(schema, obj, method) {
 function hasSameProperties({ required, optional }, obj, method) {
 	return Object.keys(obj).every((prop) => {
 		if (typeof obj[prop] !== 'object') {
-			return (required.hasOwnProperty(prop) || optional.hasOwnProperty(prop)) && (method === "PATCH" || Object.keys(required).every((p) => obj.hasOwnProperty(p)));
+			const result = (required.hasOwnProperty(prop) || optional.hasOwnProperty(prop)) && (method === "PATCH" || Object.keys(required).every((p) => {
+				const hasProp = obj.hasOwnProperty(p);
+				if (!hasProp) console.log("prop", p, "was not found!");
+				return hasProp
+			}));
+			console.log("prop", prop, "was valid = ", result);
+			console.log("required has own", required.hasOwnProperty(prop));
+			console.log("optional has own", optional.hasOwnProperty(prop));
+			console.log("has all required keys", Object.keys(required).every((p) => obj.hasOwnProperty(p)));
+			return result;
 		}
 		else {
 			return hasSameProperties(required[prop], obj[prop]) || hasSameProperties(optional[prop], obj[prop]);

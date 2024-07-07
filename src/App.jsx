@@ -17,8 +17,8 @@ export default function App() {
 					<Route path="/airports/new" element={<AddAirport/>}/>
 					<Route path="/flights/new" element={<AddFlight/>}/>
 					<Route path="/hotels" element={<Hotels/>}/>
-					<Route path="/hotels/:hotelID" element={<Hotel/>} action={hotelAction}/>
-					<Route path="/hotels/new" element={<NewHotel/>} action={newHotelAction}/>
+					<Route path="/hotels/:hotelID" element={<Hotel/>}/>
+					<Route path="/hotels/new" element={<NewHotel/>}/>
 					<Route path="/bookTrip" element={<Trips/>}/>
 				</Route>
 			</Routes>

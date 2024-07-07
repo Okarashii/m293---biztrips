@@ -120,6 +120,56 @@
       "contactFirstname": "Sam",
       "contactLastname": "Learner",
       "contactEmail": "s.learner@holiday.com"
+    },
+    {
+      "name": "Hilton",
+      "address": "Bachweg 25",
+      "city": "Zürich",
+      "contactFirstname": "John",
+      "contactLastname": "Johnson",
+      "contactEmail": "j.johnson@hilton.com",
+      "nearAirportIATA": "ZRH",
+      "id": 6
+    },
+    {
+      "name": "Hilton",
+      "address": "Bachweg 25",
+      "city": "Zürich",
+      "contactFirstname": "John",
+      "contactLastname": "Johnson",
+      "contactEmail": "j.johnson@hilton.com",
+      "nearAirportIATA": "ZRH",
+      "id": 7
+    },
+    {
+      "name": "Hilton",
+      "address": "Bachweg 25",
+      "city": "Zürich",
+      "contactFirstname": "John",
+      "contactLastname": "Johnson",
+      "contactEmail": "j.johnson@hilton.com",
+      "nearAirportIATA": "ZRH",
+      "id": 8
+    },
+    {
+      "name": "Hotel 123",
+      "address": "Numberstreet",
+      "city": "Citytown",
+      "contactFirstname": "Human",
+      "contactLastname": "Person",
+      "contactEmail": "h.person@hotel.com",
+      "nearAirportIATA": "DXB",
+      "id": 9
+    },
+    {
+      "name": "Habbo",
+      "address": "Data Highway",
+      "city": "Everywhere",
+      "contactFirstname": "John",
+      "contactLastname": "Habbo",
+      "contactEmail": "j.habbo@habbo.com",
+      "nearAirportIATA": "CDG",
+      "id": 10
     }
   ],
   "rooms": [
