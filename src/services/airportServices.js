@@ -16,8 +16,8 @@ export async function getAirports() {
 	throw response;
 }
 
-export async function getAirport(id) {
-	const response = await fetch(baseUrl + "airports/" + id);
+export async function getAirport(iataCode) {
+	const response = await fetch(baseUrl + "airports/" + iataCode);
 	if (response.ok) {return response.json();}
 	throw response;
 }

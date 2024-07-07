@@ -1,15 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { getHotel, getRooms, addRoom, deleteRoom, updateRoom } from '../../services/hotelServices';
-import { getAirport } from '../../services/airportServices';
 import { useState, useEffect } from "react";
-import FormModal from "../../components/FormModal";
-
-// export const hotelLoader = async ({params}) => {
-// 	console.log(params.hotelID);
-// 	const hotel = await getHotel(params.hotelID);
-// 	const airport = await getAirport(hotel.nearAirportID);
-// 	const rooms = getRooms(hotel.id);
-// }
 
 export const hotelAction = async ({params, request}) => {
 	const hotelID = Number.parseInt(params.hotelID);
@@ -23,7 +14,7 @@ export const hotelAction = async ({params, request}) => {
 	const utilities = formData.get("utilities");
 
 	switch(request.method) {
-		case "PUT": {
+		case "POST": {
 			addRoom({
 				hotelID,
 				roomNr,
@@ -55,49 +46,152 @@ export default function Hotel() {
 	const [hotel, setHotel] = useState({});
 	const [airport, setAirport] = useState("");
 	const [rooms, setRooms] = useState([]);
+	const [roomNr, setRoomNr] = useState("");
+	const [roomCapacity, setRoomCapacity] = useState(0);
+	const [roomPrice, setRoomPrice] = useState(0);
+	const [roomIsMeeting, setRoomIsMeeting] = useState(false);
 	const {hotelID} = useParams();
+	const [addNewRoom, setAddNewRoom] = useState(false);
+	const [changeRoom, setChangeRoom] = useState(false);
 
 	useEffect(() => {
 		getHotel(hotelID)
 			.then(({hotel, airport}) => {
 				setHotel(hotel);
-				setAirport(airport)
+				setAirport(airport);
 			});
 		getRooms(hotelID)
 			.then(r => setRooms(r));
 	}, [])
 
-	const [NewRoomModal, setNewModalOpen] = FormModal("put");
+	const handleRoomSubmit = (e) => {
+		e.preventDefault();
+		if (addNewRoom) {
+			addRoom({
+				hotelID,
+				roomNr,
+				price: roomPrice,
+				capacity: roomCapacity,
+				isMeetingRoom: roomIsMeeting
+			}).then((r) => {
+				setRoomNr("");
+				setRoomCapacity(0);
+				setRoomPrice(0);
+				setRoomIsMeeting(false);
+				setAddNewRoom(false);
+				setChangeRoom(false);
+			})
+			.then((d) => {
+				getRooms(hotelID).then(r => setRooms(r));
+			})
+		}
+		else {
+			updateRoom({
+				hotelID,
+				roomNr,
+				price: roomPrice,
+				capacity: roomCapacity,
+				isMeetingRoom: roomIsMeeting
+			}).then((r) => {
+				setRoomNr("");
+				setRoomCapacity(0);
+				setRoomPrice(0);
+				setRoomIsMeeting(false);
+				setAddNewRoom(false);
+				setChangeRoom(false);
+			})
+			.then((d) => {
+				getRooms(hotelID).then(r => setRooms(r));
+			})
+		}
+	}
 
+	const handleRoomEdit = (room) => {
+		setRoomNr(room.roomNr);
+		setRoomCapacity(room.capacity);
+		setRoomPrice(room.price);
+		setRoomIsMeeting(room.isMeetingRoom);
+		setChangeRoom(true);
+	}
+
+	const handleRoomDelete = (room) => {
+		deleteRoom(room.roomNr, hotelID)
+		.then((d) => {
+			getRooms(hotelID).then(r => setRooms(r));
+		})
+	}
+
+	function renderRoom(room) {
+		return (
+			<tr key={room.id}>
+				<td>{room.roomNr}</td>
+				<td>{room.capacity}</td>
+				<td>CHF {room.price}</td>
+				<td>
+					<button className="p-0 bg-transparent" onClick={() => handleRoomEdit(room)}>✏</button>
+					<button className="p-0 bg-transparent" onClick={() => handleRoomDelete(room)}>❌</button>
+				</td>
+			</tr>
+		)
+	}
 
 	return (
-		<div className="flex justify-between">
+		<div className="flex justify-between w-fit gap-16">
 			<div className="flex flex-col w-fit gap-10">
 				<span className="flex gap-4">
 					<HotelData hotel={hotel} airport={airport}/>
-					<button className="h-fit" onClick={() => setNewModalOpen(true)}>Neuer Raum Hinzufügen</button>
+					<button data-disabled={addNewRoom} className="data-[disabled=true]:grayed-out h-fit" onClick={() => setAddNewRoom(true)}>Neuer Raum Hinzufügen</button>
 				</span>
-				<RoomTable rooms={rooms.filter(r => !r.isMeetingRoom)} heading="Zimmer"/>
-				<RoomTable rooms={rooms.filter(r => r.isMeetingRoom)} heading="Meetingräume"/>
+				<div className="surface">
+					<h5>Zimmer</h5>
+					<table className='w-full'>
+						<thead>
+							<tr className="text-left">
+								<th>Nr</th>
+								<th>Platz</th>
+								<th>Preis</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
+						<tbody>
+							{rooms.filter(({isMeetingRoom}) => !isMeetingRoom).map(renderRoom)}
+						</tbody>
+					</table>
+				</div>
+
+				<div className="surface">
+					<h5>Meeting Räume</h5>
+					<table className='w-full'>
+						<thead>
+							<tr className="text-left">
+								<th>Nr</th>
+								<th>Platz</th>
+								<th>Preis</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
+						<tbody>
+							{rooms.filter(({isMeetingRoom}) => isMeetingRoom).map(renderRoom)}
+						</tbody>
+					</table>
+				</div>
 			</div>
 
-			<NewRoomModal className="surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
-				<h5>Raum Hinzufügen</h5>
+			<form onSubmit={handleRoomSubmit}  data-disabled={!addNewRoom && !changeRoom} className="data-[disabled=true]:grayed-out surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
+				<h5>Raum details</h5>
 				<label htmlFor="isMeetingRoom">Meetingraum</label>
-				<input type="checkbox" name="isMeetingRoom"/>
+				<input type="checkbox" name="isMeetingRoom" value={roomIsMeeting} onChange={(e) => setRoomIsMeeting(e.target.value)}/>
 				<label htmlFor="roomNr">Nr</label>
-				<input required type="text" name="roomNr"/>
+				<input required readOnly={!addNewRoom && changeRoom} className='read-only:grayed-out' type="text" name="roomNr" value={roomNr} onChange={(e) => setRoomNr(e.target.value)}/>
 				<label htmlFor="capacity">Platz</label>
-				<input required type="number" min={1} name="capacity"/>
+				<input required type="number" min={1} name="capacity" value={roomCapacity} onChange={(e) => setRoomCapacity(e.target.value)}/>
 				<label htmlFor="price">Preis in CHF</label>
-				<input required type="number" step={0.01} min={0.01} name="price"/>
-				<label htmlFor="utilities">Details</label>
-				<input required type="text" name="utilities"/>
+				<input required type="number" step={0.01} min={0.01} name="price" value={roomPrice} onChange={(e) => setRoomPrice(e.target.value)}/>
 				<span className="flex justify-end gap-4 w-full col-span-full mt-4">
-					<button type="reset">Abbrechen</button>
-					<button type="submit">Hinzufügen</button>
+					<button className='h-fit bg-slate-700' type="submit">Bestätigen</button>
+					<button className='h-fit bg-slate-700' type="reset">Abbrechen</button>
 				</span>
-			</NewRoomModal>
+			</form>
 		</div>
 	)
 }
@@ -120,106 +214,6 @@ function HotelData({hotel, airport}) {
 			<p>{hotel.contactEmail}</p>
 			<p>Nahegelegener Flughafen</p>
 			<p>{airport.name}</p>
-		</div>
-	);
-}
-
-function RoomTable({heading, rooms}) {
-	const [selectedRoom, setSelectedRoom] = useState({});
-	const [EditRoomModal, setEditModalOpen] = FormModal("patch");
-	const [DeleteRoomModal, setDeleteModalOpen] = FormModal("delete");
-
-	const openEditModal = (room) => {
-		setSelectedRoom(room);
-		setEditModalOpen(true);
-	}
-
-	const openDeleteModal = (room) => {
-		console.log("roomID Delete:", room);
-		setSelectedRoom(room);
-		setDeleteModalOpen(true);
-	}
-
-	return(
-		<>
-			<div className="surface">
-				<h5>{heading}</h5>
-				<table>
-					<thead>
-						<tr className="text-left">
-							<th>Nr</th>
-							<th>Platz</th>
-							<th>Preis</th>
-							<th>Details</th>
-							<th>Edit</th>
-						</tr>
-					</thead>
-					<tbody>
-						{rooms.map(({id, roomNr, price, capacity, utilities}) => (
-							<tr key={id}>
-								<td>{roomNr}</td>
-								<td>{capacity}</td>
-								<td>CHF {price}</td>
-								<td>{utilities}</td>
-								<td>
-									<button className="p-0 bg-transparent" onClick={() => openEditModal({id, roomNr, price, capacity, utilities})}>✏</button>
-									<button className="p-0 bg-transparent" onClick={() => openDeleteModal({id, roomNr, price, capacity, utilities})}>❌</button>
-								</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
-
-			<EditRoomModal className="surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
-				<h5>Raum Hinzufügen</h5>
-				<input type="hidden" name="id" value={selectedRoom.id}/>
-				<label htmlFor="isMeetingRoom">Meetingraum</label>
-				<input defaultChecked={selectedRoom.isMeetingRoom} type="checkbox" name="isMeetingRoom"/>
-				<label htmlFor="roomNr">Nr</label>
-				<input defaultValue={selectedRoom.roomNr} required type="text" name="roomNr"/>
-				<label htmlFor="capacity">Platz</label>
-				<input defaultValue={selectedRoom.capacity} required type="number" min={1} name="capacity"/>
-				<label htmlFor="price">Preis in CHF</label>
-				<input defaultValue={selectedRoom.price} required type="number" step={0.01} min={0.01} name="price"/>
-				<label htmlFor="utilities">Details</label>
-				<input defaultValue={selectedRoom.utilities} required type="text" name="utilities"/>
-				<span className="flex justify-end gap-4 w-full col-span-full mt-4">
-					<button type="reset">Abbrechen</button>
-					<button type="submit">Bestätigen</button>
-				</span>
-			</EditRoomModal>
-
-			<DeleteRoomModal className="surface bg-slate-600 rounded-xl p-4 grid grid-cols-2 h-fit justify-items-start w-fit gap-y-2">
-				<h6>Soll Raum {selectedRoom.roomNr} wirklich gelöscht werden?</h6>
-				<input type="hidden" name="id" value={selectedRoom.id}/>
-				<span className="flex justify-end gap-4 w-full col-span-full mt-4">
-					<button type="reset">Nein</button>
-					<button type="submit">Ja</button>
-				</span>
-			</DeleteRoomModal>
-		</>
-	)
-}
-
-function RoomTableLoading() {
-	return (
-		<div className="surface">
-			<h5>Laden...</h5>
-			<table>
-				<thead>
-					<tr className="text-left">
-						<th>Nr</th>
-						<th>Platz</th>
-						<th>Preis</th>
-						<th>Details</th>
-						<th>Edit</th>
-					</tr>
-				</thead>
-				<tbody>
-					
-				</tbody>
-			</table>
 		</div>
 	);
 }
