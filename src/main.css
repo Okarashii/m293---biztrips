@@ -440,14 +440,17 @@ video {
 :root {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
 /* form {
 		@apply grid grid-cols-2 w-fit gap-y-2 bg-slate-600 rounded-xl p-4;
 	} */
 
-input:read-only {
-  background-color: transparent;
+input {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 button {
@@ -652,8 +655,8 @@ dialog[open]::backdrop {
   display: grid;
 }
 
-.hidden {
-  display: none;
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .h-fit {
@@ -692,12 +695,24 @@ dialog[open]::backdrop {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -712,12 +727,20 @@ dialog[open]::backdrop {
   gap: 2.5rem;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
 
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-x-8 {
@@ -738,6 +761,10 @@ dialog[open]::backdrop {
 
 .justify-self-center {
   justify-self: center;
+}
+
+.overflow-clip {
+  overflow: clip;
 }
 
 .rounded-lg {
@@ -771,9 +798,19 @@ dialog[open]::backdrop {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
+.bg-slate-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
 .bg-slate-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+.bg-slate-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -786,6 +823,10 @@ dialog[open]::backdrop {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-20 {
@@ -834,4 +875,18 @@ dialog[open]::backdrop {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.read-only\:grayed-out:read-only {
+  pointer-events: none;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: 0.35;
+}
+
+.data-\[disabled\=true\]\:grayed-out[data-disabled=true] {
+  pointer-events: none;
+  -webkit-user-select: none;
+          user-select: none;
+  opacity: 0.35;
 }
