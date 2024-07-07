@@ -97,8 +97,9 @@ const participantSchema = {
 
 const planeTicketSchema = {
 	required: {
-		flightID: 0,
+		tripID: 0,
 		participantID: 0,
+		flightID: 0,
 		class: "",
 		price: 0,
 		departureDateTime: {
@@ -177,14 +178,14 @@ const tripSchema = {
 	optional: {}
 }
 
-function hasValidProps(schema, obj) {
-	return hasSameProperties(schema, obj)
+function hasValidProps(schema, obj, method) {
+	return hasSameProperties(schema, obj, method)
 }
 
-function hasSameProperties({ required, optional }, obj) {
+function hasSameProperties({ required, optional }, obj, method) {
 	return Object.keys(obj).every((prop) => {
 		if (typeof obj[prop] !== 'object') {
-			return (required.hasOwnProperty(prop) || optional.hasOwnProperty(prop)) && Object.keys(required).every((p) => obj.hasOwnProperty(p));
+			return (required.hasOwnProperty(prop) || optional.hasOwnProperty(prop)) && (method === "PATCH" || Object.keys(required).every((p) => obj.hasOwnProperty(p)));
 		}
 		else {
 			return hasSameProperties(required[prop], obj[prop]) || hasSameProperties(optional[prop], obj[prop]);
@@ -192,10 +193,13 @@ function hasSameProperties({ required, optional }, obj) {
 	})
 }
 
-function hasIdConflicts(resourceName, id) {
-	console.log("resourceName: ", resourceName);
+function hasIdConflicts(resourceName, id, method) {
 	const db = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
-	return db[resourceName].find(item => item.id == id);
+	if (method === "POST") {
+		return db[resourceName].some(item => item.id == id);
+	}
+
+	return false;
 }
 
 module.exports = (req, res, next) => {
@@ -218,12 +222,26 @@ module.exports = (req, res, next) => {
 					return;
 				}
 
+				// check for iataCode collisions
+				if (method !== "PATCH") {
+					const { airports } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					if (airports.some(({iataCode}) => iataCode === body.iataCode)) {
+						res.status(409).jsonp();
+						return;
+					}
+				}
+				else if(body.iataCode !== undefined) {
+					res.status(400).jsonp();
+					return;
+				}
+
 				break;
 			case "flights":
 				if(!hasValidProps(flightSchema, body, method)) {
 					res.status(400).jsonp();
 					return;
 				}
+
 				break;
 			case "hotels":
 				if(!hasValidProps(hotelSchema, body, method)) {
@@ -237,11 +255,67 @@ module.exports = (req, res, next) => {
 					res.status(400).jsonp();
 					return;
 				}
+
+				// Check for roomNr collisions
+				if (method !== "PATCH") {
+					const { rooms } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					if (rooms.some(({roomNr, hotelID}) => roomNr === body.roomNr && hotelID == body.hotelID)) {
+						res.status(409).jsonp();
+						return;
+					}
+				}
+				else if (body.roomNr !== undefined) {
+					res.status(400).jsonp();
+					return;
+				}
+
+				// check for valid foreign keys
+				if (method !== "PATCH") {
+					if (body.hotelID === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+
+					const { hotels } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					const hotel = hotels.find(({id}) => body.hotelID == id);
+					if (hotel === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+				else {
+					if (body.hotelID !== undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+
 				break;
 			case "meetings":
 				if(!hasValidProps(meetingSchema, body, method)) {
 					res.status(400).jsonp();
 					return;
+				}
+
+				// check for valid foreign keys
+				if (method !== "PATCH") {
+					if (body.tripID === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+
+					const { trips } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					const trip = trips.find(({id}) => body.tripID == id);
+					if (trip === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+				else {
+					if (body.tripID !== undefined) {
+						res.status(400).jsonp();
+						return;
+					}
 				}
 				break;
 			case "participants":
@@ -249,18 +323,84 @@ module.exports = (req, res, next) => {
 					res.status(400).jsonp();
 					return;
 				}
+
+				// check for valid foreign keys
+				if (method !== "PATCH") {
+					if (body.tripID === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+
+					const { trips } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					const trip = trips.find(({id}) => body.tripID == id);
+					if (trip === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+				else {
+					if (body.tripID !== undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+
 				break;
 			case "planeTickets":
 				if(!hasValidProps(planeTicketSchema, body, method)) {
 					res.status(400).jsonp();
 					return;
 				}
+
+				// check for valid foreign keys
+				if (method !== "PATCH") {
+					if (body.participantID === undefined || body.tripID === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+
+					const { participants } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					const participant = participants.find(({id}) => body.participantID == id);
+					if (participant === undefined || participant.tripID != body.tripID) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+				else {
+					if (body.participantID !== undefined || body.tripID !== undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+
 				break;
 			case "hotelBooking":
 				if(!hasValidProps(hotelBookingSchema, body, method)) {
 					res.status(400).jsonp();
 					return;
 				}
+
+				// check for valid foreign keys
+				if (method !== "PATCH") {
+					if (body.participantID === undefined || body.tripID === undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+
+					const { participants } = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+					const participant = participants.find(({id}) => body.participantID == id);
+					if (participant === undefined || participant.tripID != body.tripID) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+				else {
+					if (body.participantID !== undefined || body.tripID !== undefined) {
+						res.status(400).jsonp();
+						return;
+					}
+				}
+
 				break;
 			case "trips":
 				if(!hasValidProps(tripSchema, body, method)) {
@@ -271,5 +411,6 @@ module.exports = (req, res, next) => {
 		}
 	}
 
+	console.log("validation completed");
 	next();
 }
