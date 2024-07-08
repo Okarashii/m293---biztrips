@@ -643,6 +643,10 @@ dialog[open]::backdrop {
   margin-top: 1rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -677,6 +681,10 @@ dialog[open]::backdrop {
   width: 16rem;
 }
 
+.w-\[8rem\] {
+  width: 8rem;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -689,6 +697,22 @@ dialog[open]::backdrop {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[4rem\] {
+  width: 4rem;
+}
+
+.w-\[16rem\] {
+  width: 16rem;
+}
+
+.w-\[32rem\] {
+  width: 32rem;
+}
+
+.w-\[48rem\] {
+  width: 48rem;
 }
 
 .grid-cols-2 {
@@ -749,6 +773,10 @@ dialog[open]::backdrop {
 
 .gap-y-2 {
   row-gap: 0.5rem;
+}
+
+.self-start {
+  align-self: flex-start;
 }
 
 .justify-self-start {
